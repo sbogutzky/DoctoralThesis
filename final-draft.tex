@@ -1,0 +1,59 @@
+% ******************************* PhD Thesis Template **************************
+\documentclass[12pt, twoside=semi, DIV=calc, pagesize, parskip=half, listof=totoc, bibliography=totoc, open=right, listof=nochaptergap, final]{scrreprt} % BCOR=12mm,
+
+% ********************************** Preamble **********************************
+% Preamble: Contains packages and user-defined commands and settings
+\input{Preamble/preamble}
+
+% ************************ Thesis Information & Meta-data **********************
+% Thesis title and author information, refernce file for biblatex
+\input{dokument-info}
+\input{kurzworte}
+
+% ******************************** Front Matter ********************************
+\begin{document}
+
+\cleardoublepage
+\pagenumbering{Alph}
+\pagestyle{empty}
+
+\include{Titelseite/titelseite}
+\include{Bekanntgabe/bekanntgabe}
+\include{Danksagung/danksagung}
+\include{Zusammenfassung/zusammenfassung}
+
+% *********************** Adding TOC and List of Figures ***********************
+\cleardoublepage
+\pagenumbering{Roman}
+
+\tableofcontents
+\listoffigures
+\listoftables
+\printglossary[type=\acronymtype, title=Abkürzungsverzeichnis, style=long, nonumberlist]
+
+% ******************************** Main Matter *********************************
+\cleardoublepage
+\pagenumbering{arabic}
+
+\include{Abschnitte/einleitung}
+\include{Abschnitte/technologie-beim-laufen}
+\include{Abschnitte/flow-erleben-messen}
+\include{Abschnitte/anforderungen}
+\include{Abschnitte/studien}
+\include{Abschnitte/integration}
+\include{Abschnitte/diskussion}
+\include{Abschnitte/beitrag-und-ausblick}
+
+% ********************************** Back Matter *******************************
+
+% ********************************** Appendices ********************************
+\appendix 
+
+\include{Anhang/studiendokumente}
+\include{Anhang/studienergebnisse}
+\include{Anhang/source-code}
+
+% ********************************** Bibliography ******************************
+\printbibliography
+
+\end{document}

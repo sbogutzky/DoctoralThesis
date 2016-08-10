@@ -1,0 +1,77 @@
+% ****************************** Packages **********************************
+
+\usepackage[utf8]{inputenc} % Um die Umlaute direkt tippen zu können, kann das Paket inputenc verwendet werden.
+\usepackage[T1]{fontenc} % Zusammen mit dem inputenc Paket sollte das fontenc Paket verwendet werden. Dadurch lassen sich Probleme beim Trennen von Wörter, die Umlaute enthalten, vermeiden beziehungsweise sie können dann erst überhaupt getrennt werden.
+\usepackage{lmodern} % Das lmodern (= Latin Modern) Paket verändert die verwendete Schriftart. Der Hauptunterschied ist die Darstellung der Schrift innerhalb von pdf Dateien, während diese bei der Verwendung der normalen Standard Schriftart von Latex - Computer Modern - doch recht pixelige auf den Betrachter wirkt, erscheint der Text der mit Latin Modern als Schriftart geschrieben worden ist doch um einiges flüßiger.
+\usepackage[ngerman]{babel} % Aufgrund der Tatsache, dass LATEX im englischen Sprachraum entwickelt worden ist, sind einige Anpassungen nötig um es auch mit anderen Sprachen nutzen zu können.
+\usepackage[babel,german=quotes]{csquotes}
+%\usepackage{natbib} % Bei natbib handelt es sich um ein Paket, das erlaubt, den Bibliographiestil einfach und direkt zu verändern.
+\usepackage[mla]{ellipsis} % ellipsis sind Auslassungspunkte. Die Option mla ist für die eckigen Klammern zuständig
+\usepackage[onehalfspacing]{setspace} % Das Setspace Paket ermöglicht es auch recht einfach Weise den Zeilenabstand zu ändern.
+\usepackage[dvipsnames, table, xcdraw]{xcolor} % Unterstützung von Farbmodellen
+\usepackage[backend=bibtex, pagetracker=true, bibencoding=ascii, natbib=true, style=authoryear-ibid, backref=true, backrefstyle=all+, url=true, maxnames=3, minnames=1, uniquelist=true]{biblatex} % Paket bietet erweiterte bibliographischen Einrichtungen für die Verwendung mit LaTeX in Verbindung mit BibTeX
+\usepackage{tikz} % Erlaubt Grafiken programmatisch zu erstellen
+\usepackage{graphicx} % Ist Schlüssel-Wert-Schnittstelle für optionale Argumente für den "includegraphics" Befehl
+\usepackage{rotating} % Das rotating Paket ermöglicht das rotieren von Grafiken
+\usepackage{caption} % Das caption Paket bietet einem Mittel und Wege, das Erscheinungsbild der Bild- und Tabellenbeschriftungen den eigenen Wünschen bzw. Vorgaben anzupassen.
+\usepackage{url} % Paket für Umbrüche in E-Mail-Adressen, URLs usw.
+\usepackage[pdfauthor={Simon Bogutzky}, pdftitle={Objektivierung und Messung von Flow-Erleben beim Gehen und Laufen für mobile Applikationen}, colorlinks=true, citecolor=FlowCyan, urlcolor=FlowCyan, linkcolor=FlowCyan, linktoc=page, pdfpagelabels]{hyperref} % Das Hyperref Paket ist das Paket schlecht hin wenn es darum geht mit Hilfe von LATEX PDF Dokumente zu erstellen. Da es dem Benutzer nicht nur die Möglichkeit gibt Links und Verweise innerhalb von PDF Dokumenten zu erzeugen und zu setzen, sondern auch die Änderung von Einstellungen innerhalb des PDF Dokumentes zulässt.
+\usepackage[acronym, toc, shortcuts, indexonlyfirst]{glossaries} % Das Paket glossaries unterstützt Akronyme und mehrere Glossare
+\usepackage{tabu} % Mit longtable können Sie Tabellen zu schreiben, die auf der nächsten Seite weiter gehen
+\usepackage{tabularx} % Erweiterung von tabular um eine Spalte des xten Größe zu erstellen
+\usepackage{booktabs} % Anfertigen von hochwertigen Tabellen mit LATEX
+\usepackage{dcolumn} % Ermöglicht das spezielle Anpassen einer Zelleninhalts einer Tabelle
+\usepackage{ragged2e} % Setzt Flattersatz
+
+% **************************** User-defined commands ***************************
+
+\let\oldtabular\tabular
+\renewcommand{\tabular}{\footnotesize\oldtabular} % Ändere Schriftgröße in den Tabellen
+
+\let\oldlongtable\longtable
+\renewcommand{\longtable}{\footnotesize\oldlongtable} % Ändere Schriftgröße in den Tabellen
+
+\let\oldtabularx\tabularx
+\renewcommand{\tabularx}{\footnotesize\oldtabularx} % Ändere Schriftgröße in den Tabellen
+
+\renewcommand*{\nameyeardelim}{\addspace} % Entfernt Komma zwischen Author und Jahresjahr
+\renewcommand{\arraystretch}{1.5} % 1.5-fache Tabellenzeilenhöhe
+
+% ********************************** Settings **********************************
+
+\graphicspath{{Abbildungen/}} % Abbildungspfad
+
+\pdfinclusioncopyfonts = 1 % Nutze explizit die Schriftarten, die in der PDF eingebettet sind
+
+\definecolor{FlowCyan}{RGB}{52, 128, 164} % RGB Farbe definiert
+\definecolor{FlowRed}{RGB}{218, 44, 56} % RGB Farbe definiert
+\definecolor{FlowDarkGrey}{RGB}{79, 80, 84} % RGB Farbe definiert
+
+% Definition des DOI-Formats im Literaturverzeichnis
+\DeclareFieldFormat{doi}{
+\newline
+\mkbibacro{DOI}\addcolon\space
+\ifhyperref
+{\href{http://dx.doi.org/#1}{\nolinkurl{#1}}}
+{\nolinkurl{#1}}}
+
+% Definition des URL-Formats im Literaturverzeichnis
+\DeclareFieldFormat{url}{
+\newline
+\mkbibacro{URL}\addcolon\space
+\ifhyperref
+{\href{http://#1}{\nolinkurl{#1}}}
+{\nolinkurl{#1}}}
+
+% Definition des ISBN-Formats im Literaturverzeichnis
+\DeclareFieldFormat{isbn}{
+\newline
+\mkbibacro{ISBN}\addcolon\space#1}
+
+\newcolumntype{x}{D{,}{,}{3.3}} % Dcolumn-Format definiert
+\newcolumntype{y}{D{;}{\pm}{5.4}} % Dcolumn-Format definiert
+
+\AfterTOCHead{\singlespacing}
+\KOMAoptions{DIV=last}
+
+\sloppy
