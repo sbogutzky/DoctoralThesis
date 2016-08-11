@@ -4,7 +4,7 @@
 
 Im gegenwärtigen Kapitel verschaffe ich ein Verständnis für das in der vorliegenden Arbeit vorrangige Anwendungsbeispiel und deren Bedeutung für die mobile Mensch-Computer-Interaktion. Ich betone die Wichtigkeit der mobilen Echtzeitverarbeitung von kinematischen Daten für Apps, die das Körperbewusstsein und die Körperkontrolle von Läufern verbessern wollen. Ich stelle existierende Technologien und Konzepte aus der Forschung zur Mensch-Computer-Interaktion im Laufsport vor. Ich dokumentiere die Evolution der Lauftechnologie und zeige technologische Anknüpfunhgspunkte für ein impliziertes Messverfahren des Flow-Erlebens auf.
 
-In Abschnitt~\ref{sec:mensch_computer_interaktion_und_sport} erläutere ich die Ausdrücke Mobilität, Kinematik und Echtzeitverarbeitung und erörtere dessen Bedeutungen für die mobile Men"-sch-Computer-Interaktion in Bezug auf die Entwicklung von Apps. Bevor ich in Abschnitt~\ref{sec:existierende-technologien-beim-lauftraining} existierenden Technologien und Konzepte aus der Forschung zur Mensch-Computer-Interaktion im Laufsport vorstelle, gebe ich im Abschnitt~\ref{sec:gehen_und_laufen} einen kurzen Abriss der Erkenntnisse aus der Biomechanik des Gehens und des Laufens. In Abschnitt~\ref{sec:gestaltungsraum-fuer-technologien-fuer-das-laufen} stelle ich den Gestaltungsraum für Lauftechnologie nach \citet{Jensen2014} vor und schlage vor, ihn zu erweitern. In Abschnitt~\ref{sec:zusammenfassung-2} fasse ich das Kapitel zusammen.
+In Abschnitt~\ref{sec:mensch_computer_interaktion_und_sport} erläutere ich die Ausdrücke Mobilität, Kinematik und Echtzeitverarbeitung und erörtere dessen Bedeutungen für die mobile Mensch-Computer-Interaktion in Bezug auf die Entwicklung von Apps. Bevor ich in Abschnitt~\ref{sec:existierende_technologien_beim_lauftraining} existierenden Technologien und Konzepte aus der Forschung zur Mensch-Computer-Interaktion im Laufsport vorstelle, gebe ich im Abschnitt~\ref{sec:gehen_und_laufen} einen kurzen Abriss der Erkenntnisse aus der Biomechanik des Gehens und des Laufens. In Abschnitt~\ref{sec:gestaltungsraum_fuer_technologien_fuer_das_laufen} stelle ich den Gestaltungsraum für Lauftechnologie nach \citet{Jensen2014} vor und schlage vor, ihn zu erweitern. In Abschnitt~\ref{sec:zusammenfassung_2} fasse ich das Kapitel zusammen.
 
 \section{Mobile Mensch-Computer-Interaktion und Sport}
 \label{sec:mensch_computer_interaktion_und_sport}
@@ -60,31 +60,31 @@ Biofeedback dient in den existierenden Technologien und Konzepten aus der Forsch
 \section{Gehen und Laufen}
 \label{sec:gehen_und_laufen}
 
-Gehen und Laufen sind zyklische Tätigkeiten und folgen einem wiederholenden Muster, indem ein Schritt des einen Beins dem Schritt des anderen Beins folgt. \citet[][S.~9]{Bartlett2007} definiert einen Doppelschritt (engl. \emph{stride}) beim Gehen von der Bodenberührung des einen Fußes bis zur nächsten Bodenberührung des selben Fußes, von dem Schüsselereignis Abheben der Zehen (engl. \emph{\ac{TO}}) zum nächsten Abheben. Beim Gehen besitzt der Bewegungsablauf (siehe Abbildung~\ref{fig:2-1-bewegungsablauf-gehen}) eine Einzelstützphase (engl. \emph{single-support phase}), wenn ein Fuß den Boden berührt und eine Doppelstützphase (engl. \emph{double-support phase}), wenn beide Füße den Boden berühren \citep[vgl.][]{Bartlett2007}. Die Einzelstützphase beginnt mit dem Abheben des Fußes und die Doppelstützphase beginnt mit dem Aufsetzen des selben Fußes, mit dem Schlüsselereignis Aufsetzen der Ferse (engl. \emph{\ac{HS}}) \citep[vgl.][]{Bartlett2007}. Die Dauer der Einzelstützphase ist viermal länger als die der Doppelstützphase \citep[vgl.][]{Bartlett2007}.
+Gehen und Laufen sind zyklische Tätigkeiten und folgen einem wiederholenden Muster, indem ein Schritt des einen Beins dem Schritt des anderen Beins folgt. \citet[][S.~9]{Bartlett2007} definiert einen Doppelschritt (engl. \emph{stride}) beim Gehen von der Bodenberührung des einen Fußes bis zur nächsten Bodenberührung des selben Fußes, von dem Schüsselereignis Abheben der Zehen (engl. \emph{\ac{TO}}) zum nächsten Abheben. Beim Gehen besitzt der Bewegungsablauf (siehe Abbildung~\ref{fig:2_1_bewegungsablauf_gehen}) eine Einzelstützphase (engl. \emph{single-support phase}), wenn ein Fuß den Boden berührt und eine Doppelstützphase (engl. \emph{double-support phase}), wenn beide Füße den Boden berühren \citep[vgl.][]{Bartlett2007}. Die Einzelstützphase beginnt mit dem Abheben des Fußes und die Doppelstützphase beginnt mit dem Aufsetzen des selben Fußes, mit dem Schlüsselereignis Aufsetzen der Ferse (engl. \emph{\ac{HS}}) \citep[vgl.][]{Bartlett2007}. Die Dauer der Einzelstützphase ist viermal länger als die der Doppelstützphase \citep[vgl.][]{Bartlett2007}.
 
 \begin{figure}[t]
 	\centering
 		\includegraphics[width=1.00\textwidth]{2-1-bewegungsablauf-gehen.pdf}
 	\caption[Phasen des menschlichen Bewegungsablaufs beim Gehen]{Phasen des menschlichen Bewegungsablaufs beim Gehen. Quelle: Eigene Darstellung}
-	\label{fig:2-1-bewegungsablauf-gehen}
+	\label{fig:2_1_bewegungsablauf_gehen}
 \end{figure}
 
-Betrachten wir alternativ jedes Bein beim Gehen einzeln, besitzt es im Bewegungsablauf eine Stützphase (engl. \emph{stance phase}) und eine Schwungphase (engl. \emph{swing phase}) \citep[vgl.][]{Bartlett2007}. Beim normalen Gehen in einer selbstbestimmten und angenehmen Geschwindigkeit beträgt die Stützphase 60 \% und die Schwungphase 40 \% des Bewegungsablaufs \citep[vgl.][]{Bartlett2007}. Für die vorliegende Arbeit besitzt die Schwungphase ein bedeutendes Schlüsselereignis, den mittleren Schwung (engl. \emph{MS}). Der mittlere Schwung ist gekennzeichnet durch eine hohe kinematische Energie beim Gehen und Laufen \citep[vgl.][]{Novacheck1998}.
+Betrachten wir alternativ jedes Bein beim Gehen einzeln, besitzt es im Bewegungsablauf eine Stützphase (engl. \emph{stance phase}) und eine Schwungphase (engl. \emph{swing phase}) \citep[vgl.][]{Bartlett2007}. Beim normalen Gehen in einer selbstbestimmten und angenehmen Geschwindigkeit beträgt die Stützphase 60 \% und die Schwungphase 40 \% des Bewegungsablaufs \citep[vgl.][]{Bartlett2007}. Für die vorliegende Arbeit besitzt die Schwungphase ein bedeutendes Schlüsselereignis, den mittleren Schwung (engl. \emph{\ac{MS}}). Der mittlere Schwung ist gekennzeichnet durch eine hohe kinematische Energie beim Gehen und Laufen \citep[vgl.][]{Novacheck1998}.
 
 Eigenschaften der menschlichen Bewegung sind individuell und unterscheiden sich von Mensch zu Mensch. In der vorliegenden Arbeit benutze ich das Adjektiv normal, um auszudrücken, dass es sich um eine Bewegung handelt, die Menschen in der Regel ohne Einflüsse wie z. B. Verletzungen ähnlich ausführen. Beim normalen Gehen setzt der Fuß mit der Ferse bzw. Rückfuß \ac{HS} auf \citep[vgl.][S.~33]{Marquardt2011}. Anders verhält es sich beim Laufen, bei dem der Läufer mit dem Vorder-, Mittel- oder Rückfuß aufsetzt. In der Literatur finden wir die Ausdrücke \emph{\ac{IC}} und \emph{\ac{IS}}, um die Berührung des Bodes durch den Fuß und das Lösen des Fußes vom Boden zu verallgemeinern.
 
-Laufen unterscheidet sich vom Gehen, da keine Doppelstützphase vorhanden ist, in der beide Füße gleichzeitig den Boden berühren \citep[vgl.][S.~15~f.]{Bartlett2007}. Der Bewegungsablauf beim Laufen (siehe Abbildung~\ref{fig:2-2-bewegungsablauf-laufen}) unterteilt sich in eine Stützphase (engl. \emph{support phase}), in der ein Fuß den Boden berührt und in eine Schwungphase, in der beide Füße keinen Bodenkontakt besitzen \citep[vgl.][S.~16]{Bartlett2007}. Nur die Stützphase, vom Aufsetzen des Fußes (\ac{IC}) bis zum Abstoßen des Fußes (\ac{IS}), ermöglicht es dem Läufer, Kraft für die Fortbewegung auszuüben \citep[vgl.][]{Bartlett2007}. \citet[][S.~17]{Bartlett2007} betrachtet die Schwungphase als Vorbereitung für das nächste Aufsetzen des Fußes und bezeichnet sie als \emph{recovery phase} (deutsch Aufschwung, aber auch Wiederherstellung und Erholung). Beim Laufen oder Joggen ist die Dauer der Stützphase und der Schwungphase in der Regel gleich lang \citep[vgl.][S.~32~f.]{Marquardt2011}. Die Schwungphase verlängert sich mit höherer Laufgeschwindigkeit \citep[vgl.][]{Marquardt2011}. Tabelle~\ref{tab:unterschiede-zwischen-laufen-und-gehen} fasst die Unterschiede zwischen Gehen und Laufen nochmals zusammen.
+Laufen unterscheidet sich vom Gehen, da keine Doppelstützphase vorhanden ist, in der beide Füße gleichzeitig den Boden berühren \citep[vgl.][S.~15~f.]{Bartlett2007}. Der Bewegungsablauf beim Laufen (siehe Abbildung~\ref{fig:2_2_bewegungsablauf_laufen}) unterteilt sich in eine Stützphase (engl. \emph{support phase}), in der ein Fuß den Boden berührt und in eine Schwungphase, in der beide Füße keinen Bodenkontakt besitzen \citep[vgl.][S.~16]{Bartlett2007}. Nur die Stützphase, vom Aufsetzen des Fußes (\ac{IC}) bis zum Abstoßen des Fußes (\ac{IS}), ermöglicht es dem Läufer, Kraft für die Fortbewegung auszuüben \citep[vgl.][]{Bartlett2007}. \citet[][S.~17]{Bartlett2007} betrachtet die Schwungphase als Vorbereitung für das nächste Aufsetzen des Fußes und bezeichnet sie als \emph{recovery phase} (deutsch Aufschwung, aber auch Wiederherstellung und Erholung). Beim Laufen oder Joggen ist die Dauer der Stützphase und der Schwungphase in der Regel gleich lang \citep[vgl.][S.~32~f.]{Marquardt2011}. Die Schwungphase verlängert sich mit höherer Laufgeschwindigkeit \citep[vgl.][]{Marquardt2011}. Tabelle~\ref{tab:unterschiede_zwischen_laufen_und_gehen} fasst die Unterschiede zwischen Gehen und Laufen nochmals zusammen.
 
 \begin{figure}[t]
 	\centering
 		\includegraphics[width=1.00\textwidth]{2-2-bewegungsablauf-laufen.pdf}
 	\caption[Phasen des menschlichen Bewegungsablaufs beim Laufen]{Phasen des menschlichen Bewegungsablaufs beim Laufen. Quelle: Eigene Darstellung}
-	\label{fig:2-2-bewegungsablauf-laufen}
+	\label{fig:2_2_bewegungsablauf_laufen}
 \end{figure}
 
 \begin{table}[t]
 	\caption[Unterschiede zwischen Laufen und Gehen]{Unterschiede zwischen Laufen und Gehen nach \citet{Marquardt2011}}
-	\label{tab:unterschiede-zwischen-laufen-und-gehen}
+	\label{tab:unterschiede_zwischen_laufen_und_gehen}
 	\begin{tabularx}{\textwidth}{*{3}{>{\RaggedRight\arraybackslash}X}}
 \toprule
  & Gehen & Laufen \\
@@ -100,18 +100,18 @@ Fußaufsatz & immer mit der Ferse (Rückfuß) & mit dem Vorder-, Mittel-, oder R
 \end{table}
 
 \section{Existierende Technologien beim Lauftraining}
-\label{sec:existierende-technologien-beim-lauftraining}
+\label{sec:existierende_technologien_beim_lauftraining}
 
-Die in Abschnitt~\ref{sec:gehen_und_laufen} angeführten Erkenntnisse über die biomechanischen Eigenschaften des Gehens und des Laufens lassen sich in Konzepte für Benutzerschnittstellen (engl. \emph{user interfaces}) für das Geh- und Lauftraining einsetzen. Eine Vielzahl wissenschaftlicher Arbeiten aus der Mensch-Computer-Interaktion beschäftigt sich mit der Hilfe der vorgestellten Erkenntnisse mit der Identifikation von Personen und der Fallerkennung von Menschen. Die beiden genannten Anwendungsfälle sind nicht Bestandteil der vorliegenden Arbeit. In der gegenwärtige Arbeit beschäftige ich mich im Bereich der mobilen Mensch-Computer-Interaktion mit Technologien für das Lauftraining. \pagebreak \citet{Jensen2014} unterteilen die existierende Technologie beim Lauftraining in die nachfolgenden Gruppen:
+Die in Abschnitt~\ref{sec:gehen_und_laufen} angeführten Erkenntnisse über die biomechanischen Eigenschaften des Gehens und des Laufens lassen sich in Konzepte für Benutzerschnittstellen (engl. \emph{user interfaces}) für das Geh- und Lauftraining einsetzen. Eine Vielzahl wissenschaftlicher Arbeiten aus der Mensch-Computer-Interaktion beschäftigt sich mit der Hilfe der vorgestellten Erkenntnisse mit der Identifikation von Personen und der Fallerkennung von Menschen. Die beiden genannten Anwendungsfälle sind nicht Bestandteil der vorliegenden Arbeit. In der gegenwärtige Arbeit beschäftige ich mich im Bereich der mobilen Mensch-Computer-Interaktion mit Technologien für das Lauftraining. \citet{Jensen2014} unterteilen die existierende Technologie beim Lauftraining in die nachfolgenden Gruppen:
 
 \begin{itemize}
-\item traditionelle Benutzerschnittstellen (siehe Abschnitt~\ref{sub:traditionelle-benutzerschnittstellen})
+\item traditionelle Benutzerschnittstellen (siehe Abschnitt~\ref{sub:traditionelle_benutzerschnittstellen})
 \item Lauftechnik-Detektionstechnologie (siehe Abschnitt~\ref{sub:lauftechnik_detektionstechnologie})
 \item assistierende Echtzeit-Benutzerschnittstellen (siehe Abschnitt~\ref{sub:assistierende_echtzeit_benutzerschnittstellen})
 \end{itemize}
 
 \subsection{Traditionelle Benutzerschnittstellen}
-\label{sub:traditionelle-benutzerschnittstellen}
+\label{sub:traditionelle_benutzerschnittstellen}
 
 Eine Benutzerschnittstelle, die leistungsbezogene Merkmale des Lauftrainings wie Geschwindigkeit, Laufzeit und -distanz sowie Herzfrequenz darstellt, zählen \citet{Jensen2014} zu den traditionellen Benutzerschnittstellen. Als Beispiele sind Läuferuhren und Apps, die dem Läufer zur Anzeige leistungsbezogener Merkmale dienen, zu nennen.
 
@@ -121,6 +121,7 @@ Entwickler von Lauf-Apps für Smartphones wie \emph{Runtastic}, \emph{Runkeeper}
 
 \subsection{Lauftechnik-Detektionstechnologie}
 \label{sub:lauftechnik_detektionstechnologie}
+
 Lauftechnik-Detektionstechnologie besteht für \citet{Jensen2014} aus \emph{Handhelds} und tragbaren Trägheitsmesseinheiten oder kamerabasierenden Bewegungserkennungssystemen. In der vorliegenden Arbeit liegt der Fokus auf \emph{Handhelds} und tragbaren Trägheitsmesseinheiten, da wir in der Lage sind sie nahezu uneingeschränkt außerhalb von Laboratorien einzusetzen. Abhängig von Energiebedarf und Energiequelle lassen sich beide kabellos über längere Zeiträume betreiben. Sie sind beide in der Lage kinematische Daten während des Laufens zu messen und zu sammeln. Kinematische Daten bilden die Grundlage zur Berechnung kinematischer Merkmale des Laufens. Zu den Merkmalen gehören z. B. die Schrittfrequenz, die Bodenkontaktzeit (engl. \emph{ground contact time}), die vertikale Bewegung des Läufers und dessen Fußaufsatztyp (engl. \emph{foot strike type}).
 
 \citet{Harms2010} entwickelten mit \emph{ETHOS} einen 2,5 $cm^{2}$ großen tragbaren Prototypen, der einen Beschleunigungsmesser, ein Kreiselinstrument und ein Magnetometer besitzt. Eine \emph{ETHOS} Einheit ist in der Lage über einen längeren Zeitraum kinematische Daten zu sammeln und für eine nachträgliche Analyse bereitzustellen.
@@ -151,14 +152,14 @@ Das von \citet[][]{Eriksson2010} vorgestellte System, bestehend aus einem mobile
 Die symmetrische Linie des Körpers zur Überprüfung der Armbewegung beim Laufen nutzen \citet{Strohrmann2013, Strohrmann2014} in einer Smartphone App. Die App signalisiert dem Läufer über Vibration, wenn die Armbewegung nicht parallel zum Körper verläuft. In einer Vorstudie mit zehn Teilnehmern trainierten \citet{Strohrmann2013} einen Algorithmus zur Klassifizierung der drei Haltungsfälle: Arme laufen parallel zum Körper, Arme zielen zur symmetrischen Linie und Arme kreuzen die symmetrische Linie. Die Autoren identifizierten den Oberarm als geeignetste Körperposition für die Klassifizierung. Der Vorteil des Oberarms ist zusätzlich, dass Läufer ihn im Regelfall nutzen, um ein Smartphone in einem Sportarmband zu tragen. In der Vorstudie nutzen die Autoren \emph{ETHOS} Einheiten. In der Hauptstudie mit 20 Teilnehmern kam das Smartphone mit dessen internen Beschleunigungsmesser und Kreiselinstrument zum Einsatz. Die Studie diente dem Vergleich der App Rückmeldung und einer verbalen Rückmeldung durch einen Übungsleiter. In beiden Formen der Rückmeldung zeigen die Ergebnisse eine vergleichbare signifikante Verbesserung der Armhaltung. Die Autoren sehen den Vorteil der App darin, dass Läufer ohne Zugang zu einem persönlichen Trainer in der Lage sind, mit der App ihre Lauftechnik zu verbessern. Anhand eines Fragebogens schließen die Autoren zusätzlich auf eine hohe Akzeptanz ihres Konzepts.
 
 \section{Gestaltungsraum für Technologien für das Laufen}
-\label{sec:gestaltungsraum-fuer-technologien-fuer-das-laufen}
-Die in Abschnitt~\ref{sec:existierende-technologien-beim-lauftraining} vorgestellten Technologien ergeben nach \citet[][]{Jensen2014} den in Abbildung~\ref{fig:2-3-gestaltungsraum-und-entwicklungen} dargestellten zwei dimensionalen Gestaltungsraum. Auf der Achse Rückmeldung liegen auf der einen Hälfte die darstellenden Rückmeldungen und auf der anderen Hälfte die assistierenden Rückmeldungen. Die Achse Fokus repräsentiert die leistungsbezogenen Technologien auf der einen Seite und die technikbezogenen Technologien auf der anderen Seite.
+\label{sec:gestaltungsraum_fuer_technologien_fuer_das_laufen}
+Die in Abschnitt~\ref{sec:existierende_technologien_beim_lauftraining} vorgestellten Technologien ergeben nach \citet[][]{Jensen2014} den in Abbildung~\ref{fig:2_3_gestaltungsraum_und_entwicklungen} dargestellten zwei dimensionalen Gestaltungsraum. Auf der Achse Rückmeldung liegen auf der einen Hälfte die darstellenden Rückmeldungen und auf der anderen Hälfte die assistierenden Rückmeldungen. Die Achse Fokus repräsentiert die leistungsbezogenen Technologien auf der einen Seite und die technikbezogenen Technologien auf der anderen Seite.
 
 \begin{figure}[t]
 	\centering
 		\includegraphics[width=1.00\textwidth]{2-3-gestaltungsraum-und-entwicklungen.pdf}
 	\caption[Gestaltungsraum für Technologien für das Laufen]{Gestaltungsraum für Technologien für das Laufen. Quelle: \citet[][]{Jensen2014}. Leicht modifiziert und übersetzt}
-	\label{fig:2-3-gestaltungsraum-und-entwicklungen}
+	\label{fig:2_3_gestaltungsraum_und_entwicklungen}
 \end{figure}
 
 Das Ziel der vorliegenden Arbeit ist es nicht, die Laufleistung oder die Laufökonomie zu optimieren, sondern die Voraussetzungen für das Erleben von Flow beim Laufen zu verbessern. Damit verspreche ich mir, das Wohlbefinden beim Laufen und die damit verbundene intrinsische Motivation zu fördern. Die rein leistungs- und technikbezogene Einteilung des Gestaltungsraums für Lauftechnologie ist für die vorliegende Arbeit aus dem dargestellten Grund nicht ausreichend. Die reine Quantifizierung gemessener Tätigkeiten besitzt einen negativen Einfluss auf die intrinsische Motivation \citep[vgl.][]{Etkin2016}. Eine ausschließlich durch Messwerte ausgedrückte Sicht auf die Tätigkeit führt zu einer verminderten Hingabe für die Tätigkeit und verminderten Freude bzw. zu subjektiven Wohlbefinden bei der Ausführung der Tätigkeit \citep[vgl.][]{Etkin2016}.
@@ -166,11 +167,11 @@ Das Ziel der vorliegenden Arbeit ist es nicht, die Laufleistung oder die Laufök
 In der vorliegenden Arbeit schlage ich vor, den vorgestellten Gestaltungsraum um den Faktor Wohlbefinden auf der Fokus-Achse zu erweitern. Auf der Grundlage von assistierenden Echtzeit-Benutzerschnittstellen motiviere ich Benutzerschnittstellen, die das Flow-Erleben implizit messen. Damit strebe ich in der vorliegenden Arbeit an, das Fundament zu schaffen, die Voraussetzungen des Läufers durch Echtzeitrückmeldungen zu verbessern, Flow zu erleben -- also Lauf-Apps zu entwickeln, deren Ziel es ist, Läufer in einen individuellen optimalen Zustand zu bringen und das Wohlbefinden während des Laufens zu fördern.
 
 \section{Zusammenfassung}
-\label{sec:zusammenfassung-2}
+\label{sec:zusammenfassung_2}
 Im gegenwärtigen Kapitel führe ich in die Forschung im Bereich der Lauftechnologie ein. Zu Beginn stelle ich die Motivation der Computernutzung im Sport vor und betone damit die Allgegenwärtigkeit von Computern. Ein Verständnis für die Wichtigkeit von Mobilität, kinematischen Merkmalen und Echtzeitverarbeitung besitzt für die vorliegende Arbeit eine spezielle Bedeutung.
 
-Mein Hauptfokus liegt in der vorliegenden Arbeit auf dem Gehen und auf dem Laufen. Ich erörtere im gegenwärtigen Kapitel die Schlüsselereignisse \ac{HS} bzw. \ac{IC}, \ac{TO} bzw. \ac{IS} und MS der Biomechanik des menschlichen Gangs beim Gehen und Laufen.
+Mein Hauptfokus liegt in der vorliegenden Arbeit auf dem Gehen und auf dem Laufen. Ich erörtere im gegenwärtigen Kapitel die Schlüsselereignisse \ac{HS} bzw. \ac{IC}, \ac{TO} bzw. \ac{IS} und \ac{MS} der Biomechanik des menschlichen Gangs beim Gehen und Laufen.
 
-Laufleistungs- und lauftechnikbezogene Merkmale spielen eine bedeutende Rolle in diversen Forschungsarbeiten der Mensch-Computer-Interaktion beim Laufen. Der vorgestellte Gestaltungsraum (siehe Abbildung~\ref{fig:2-3-gestaltungsraum-und-entwicklungen}) für Lauftrainingstechnologie zeigt zusammenfassend, für welche Anwendungsfälle computerbasierende Systeme vorhanden sind. Flow-Erleben und die in Zusammenhang stehenden Gemüts- und Gefühlszustände Freude und Wohlbefinden finden in dem Gestaltungsraum keine Berücksichtigung. Aus dem Grund schlage ich im gegenwärtigen Kapitel eine Erweiterung des Gestaltungsraums um den Faktor Wohlbefinden vor.
+Laufleistungs- und lauftechnikbezogene Merkmale spielen eine bedeutende Rolle in diversen Forschungsarbeiten der Mensch-Computer-Interaktion beim Laufen. Der vorgestellte Gestaltungsraum (siehe Abbildung~\ref{fig:2_3_gestaltungsraum_und_entwicklungen}) für Lauftrainingstechnologie zeigt zusammenfassend, für welche Anwendungsfälle computerbasierende Systeme vorhanden sind. Flow-Erleben und die in Zusammenhang stehenden Gemüts- und Gefühlszustände Freude und Wohlbefinden finden in dem Gestaltungsraum keine Berücksichtigung. Aus dem Grund schlage ich im gegenwärtigen Kapitel eine Erweiterung des Gestaltungsraums um den Faktor Wohlbefinden vor.
 
 In erster Linie sehe ich die vorgestellten assistierenden Echt"-zeit-Be"-nut"-zer"-schnitt"-stel"-len als Anknüpfungspunkt für Applikationen, die die Voraussetzungen verbessern, Flow beim Laufen zu erleben. Es fehlt uns für die Realisierung solcher Applikationen ein geeignetes Messverfahren, um einen Bewusstseinszustand wie Flow-Erleben während des Laufens zu quantifizieren. Demzufolge betrachte ich im nachfolgenden Kapitel das Flow-Erleben, bestehende explizite Messverfahren und Lösungsansätze zur impliziten Messung des Flow-Erlebens.
