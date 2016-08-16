@@ -10,7 +10,7 @@
 \usepackage[mla]{ellipsis} % ellipsis sind Auslassungspunkte. Die Option mla ist für die eckigen Klammern zuständig
 \usepackage[onehalfspacing]{setspace} % Das Setspace Paket ermöglicht es auch recht einfach Weise den Zeilenabstand zu ändern.
 \usepackage[dvipsnames, table, xcdraw]{xcolor} % Unterstützung von Farbmodellen
-\usepackage[backend=bibtex, pagetracker=true, bibencoding=ascii, natbib=true, style=authoryear-ibid, backref=true, backrefstyle=all+, url=true, maxnames=3, minnames=1, uniquelist=true]{biblatex} % Paket bietet erweiterte bibliographischen Einrichtungen für die Verwendung mit LaTeX in Verbindung mit BibTeX
+\usepackage[backend=bibtex, pagetracker=true, bibencoding=utf8, natbib=true, style=authoryear-comp, backref=false, url=false, maxnames=3, minnames=1, uniquelist=true, isbn=false, doi=false]{biblatex} % Paket bietet erweiterte bibliographischen Einrichtungen für die Verwendung mit LaTeX in Verbindung mit BibTeX
 \usepackage{tikz} % Erlaubt Grafiken programmatisch zu erstellen
 \usepackage{graphicx} % Ist Schlüssel-Wert-Schnittstelle für optionale Argumente für den "includegraphics" Befehl
 \usepackage{rotating} % Das rotating Paket ermöglicht das rotieren von Grafiken
@@ -71,6 +71,10 @@
 
 \newcolumntype{x}{D{,}{,}{3.3}} % Dcolumn-Format definiert
 \newcolumntype{y}{D{;}{\pm}{5.4}} % Dcolumn-Format definiert
+
+\DefineBibliographyStrings{ngerman}{ 
+   andothers = {{et~al.}},             
+} 
 
 \sloppy % Schaltet auf eine großzügige Formatierungsweise um, die relativ wenige Worttrennungen am Zeilenende erzeugt, dafür aber auch etwas größere Wortabstände innerhalb der Zeilen zuläßt.
 
