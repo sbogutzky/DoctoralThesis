@@ -26,13 +26,13 @@
 
 % **************************** User-defined commands ***************************
 
-\let\oldtabular\tabular
+\let\oldtabular\tabular{}
 \renewcommand{\tabular}{\footnotesize\oldtabular} % Ändere Schriftgröße in den Tabellen
 
-\let\oldlongtable\longtable
+\let\oldlongtable\longtable{}
 \renewcommand{\longtable}{\footnotesize\oldlongtable} % Ändere Schriftgröße in den Tabellen
 
-\let\oldtabularx\tabularx
+\let\oldtabularx\tabularx{}
 \renewcommand{\tabularx}{\footnotesize\oldtabularx} % Ändere Schriftgröße in den Tabellen
 
 \renewcommand*{\nameyeardelim}{\addspace} % Entfernt Komma zwischen Author und Jahresjahr
@@ -42,7 +42,7 @@
 
 \graphicspath{{Abbildungen/}} % Abbildungspfad
 
-\pdfinclusioncopyfonts = 1 % Nutze explizit die Schriftarten, die in der PDF eingebettet sind
+\pdfinclusioncopyfonts=1 % Nutze explizit die Schriftarten, die in der PDF eingebettet sind
 
 \definecolor{FlowCyan}{RGB}{52, 128, 164} % RGB Farbe definiert
 \definecolor{FlowRed}{RGB}{218, 44, 56} % RGB Farbe definiert
@@ -52,7 +52,7 @@
 \DeclareFieldFormat{doi}{
 \newline
 \mkbibacro{DOI}\addcolon\space
-\ifhyperref
+\ifhyperref\
 {\href{http://dx.doi.org/#1}{\nolinkurl{#1}}}
 {\nolinkurl{#1}}}
 
@@ -60,7 +60,7 @@
 \DeclareFieldFormat{url}{
 \newline
 \mkbibacro{URL}\addcolon\space
-\ifhyperref
+\ifhyperref\
 {\href{http://#1}{\nolinkurl{#1}}}
 {\nolinkurl{#1}}}
 
