@@ -1,43 +1,9 @@
+
+
 %!TEX root = /Users/sbogutzky/Entwicklung/projects/bogutzky/repositories/2939413/final-draft.tex
-\chapter{Integration in eine assistierende Echtzeit-Benutzerschnittstelle}
+\chapter{Integration in eine assistierende Echtzeit-Benutzerschnittstelle} 
+
+% (fold)
 \label{cha:integration_in_eine_assistierende_echtzeit_benutzerschnittstelle}
-Aufgrund mangelnder menschlicher Ressourcen sind der vorliegenden Arbeit statistisch hinreichende befriedigende Ergebnisse verwehrt geblieben. Die automatisierte und mobile Messung eines Kandidaten der impliziten Flow-Messung wäre der nächste Schritt gewesen, um eine assistierende Echtzeit-Benutzerschnittstelle wie in Abschnitt~\ref{sub:assistierende_echtzeit_benutzerschnittstellen} beschrieben zu realisieren. Im gegenwärtigen Kapitel veranschauliche ich die mögliche Integration einer impliziten Messung in eine Echtzeit-Benutzerschnittstelle.
 
-\section{Demonstrator}
-\label{sec:demonstrator}
-Ein implizites Messverfahren ermöglicht erst eine automatische Anpassung z.~B. von Klang. Ein Demonstrator (sog. \emph{Flow-Maschine}), der die implizite Messung des Flow-Erlebens durch eine einfache implizite Messung von Bewegungsmerkmalen ersetzt, wurde als Proof-of-Concept durch uns im \acs{BMBF}-Projekt realisiert.
-
-Der Demonstrator wurde für die \emph{iPhone-Generationen} ab dem \emph{iPhone 4S} (besitzen ein Kreiselinstrument) entwickelt. Der Benutzer trägt das \emph{iPhone} in der Hosentasche. Mittels der im \emph{iPhone} integrierten Sensoren (Beschleunigungssensor, Drehratensensor) reagiert ein Algorithmus zur Echtzeitverarbeitung von Bewegungsdaten auf die biomechanischen Merkmale des Gehens, "`Mittelstütz"' und "`Mittelerer Schwung"' (siehe Abschnitt~\ref{sec:gehen_und_laufen}). Ich entwickelte den Algorithmus auf Basis der Daten, die ich durch die Fallstudie für die gehende Untersuchungsperson von der zweiten \emph{Shimmer} \ac{IMU} mit \emph{Gyro-Modul} erhielt. Der Algorithmus basiert auf dem \emph{R}-Programm zur Erkennung von \ac{MS} aus Abschnitt~\ref{par:r_programme_zur_erkennung}. Der Algorithmus berechnet die personenindividuellen Grenzfrequenzen automatisch nach etwa fünf Schritten zu Beginn einer Sitzung und nach dem Stehenbleiben des Benutzers.
-
-Eine dynamische Verklanglichung des Ganges in Echtzeit mit \emph{PureData} realisierte \citet{Hajinejad}. \emph{PureData} ist eine datenstromorientierte Programmiersprache und Entwicklungsumgebung, die visuelle Programmierung benutzt. Sie dient vor allem zur Erstellung von interaktiver Multimedia-Software, etwa für Software-Synthesizer in der elektronischen Musik. Auf der Grundlage der biomechanischen Gangmerkmalerkennung suggeriert die Verklanglichung dem Benutzer des Demonstrators einen rhythmischen Grundtakt, den er mit dem Aufsetzen der rechten bzw. linken Ferse auslöst. Auf diesen Grundtakt setzen schrittweise komplexere Mechaniken der Verklanglichung auf \citep[vgl.][]{Hajinejad}.
-
-Eine primitive Möglichkeit, auf eine implizite Flow-Messung zu reagieren, ist, die Verklanglichung nur einzusetzen, wenn der Benutzer des Demonstrators keinen Flow erlebt. Bis zu diesem Zeitpunkt baut sich die Verklanglichung auf und verstummt, wenn der Benutzer Flow erlebt. Im Anschluss wird die Verklanglichung temporär reaktiviert, wenn der Demonstrator durch die implizite Messung des Flow-Erlebens feststellt, das der Benutzer im Begriff ist, das Flow-Erleben zu verlassen. Dieser \emph{Close-Loop}-Ansatz ist in Abbildung~\ref{fig:6_1_closed_loop_ansatz} abstrakt skizziert \citep[vgl.][S.~474]{Calvo2015} und stellt im erweiterten Sinne ein \emph{Realtime Biofeedback} System dar (vgl. Abschnitt~\ref{sec:mensch_computer_interaktion_und_sport}). 
-
-\begin{figure}[t]
-	\centering
-		\includegraphics[width=1.00\textwidth]{6-1-closed-loop-ansatz.pdf}
-	\caption[Closed-Loop Ansatz]{Closed-Loop Ansatz. Quelle: Eigene Darstellung}
-	\label{fig:6_1_closed_loop_ansatz}
-\end{figure}
-
-Aufgrund des Fehlens eines impliziten Messverfahrens realisierte \citet{Hajinejad} den Aufbau der Verklanglichung vom Grundtakt bis zum Verstummen auf der Basis des kontinuierlichen Gehens, um die Tätigkeit des Gehens durch Klang erfreulicher zu gestalten.
-
-\section{Flow und Klang beim Gehen}
-Ich testete im Rahmen der Projektstudie des \acs{BMBF}-Projektes die Echtzeiterkennung der einzelnen biomechanischen Merkmale des Gehens und die Wirkung der Verklanglichung auf das Flow-Erleben. Im nachfolgenden erläutere ich nur ein Teilergebnis dieser Studie. Für alle weiteren Ergebnisse verweise ich auf die Arbeit von Hajinejad \citet{Hajinejad}. 
-
-Die Studie wurde im Juni 2015 mit zwölf Untersuchungspersonen (davon acht weibliche und vier männliche) im Alter zwischen 25 und 36 Jahre ($M = 30, SD = 3,79$) durchgeführt. Die Untersuchungsteilnehmer nutzten den Demonstrator viermal beim Gehen zu einem individuellen Zielort (Hin- und Rückweg), die ersten beiden Male ohne und danach zweimal mit Verklanglichung. Eine Wegstrecke (nur Hin- oder Rückweg) dauerte durchschnittlich 17 Minuten und 17 Sekunden. 
-
-Die Untersuchungspersonen füllten nach jeder Wegstrecke eine \ac{FKS} auf dem Smartphone aus. Bei fünf Wegstrecken gab es technische Probleme mit dem Demonstrator. Damit erhielt ich 48 Bewertungen der \ac{FKS} aus Wegstrecken ohne Verklanglichung und 43 Bewertungen der \ac{FKS} aus Wegstrecken mit Verklanglichung. Ich nutzte den Generalfaktor der \ac{FKS} zur Operationalisierung des Flow-Erlebens, da ich annahm, dass die Verklanglichung durch ihren rhythmischen Grundtakt auf die Absorbiertheit und den glatten Verlauf gleichermaßen Einfluss nimmt.
-
-\subsection{Ergebnis}
-Ich nutzte den Mann-Whitney-Wilcoxon Test zum Vergleich der nicht abhängigen Stichproben, da keine Normalverteilung in den beiden Gruppen vorlag. Das Ergebnis des Testes ist nicht signifikant. Die Mittelwerte betragen bei der Gruppe "`mit Verklanglichung"' 4,62 und bei der Gruppe "`ohne Verklanglichung"' 4,60. Damit folgere ich, dass die Verklanglichung keinen Einfluss auf die Bewertung des Flow-Erlebens hatte. 
-
-Die Echtzeiterkennung der biomechanischen Merkmale des Gehens erkannte insgesamt 143.542 Schritte. Die Latenzzeiten bei der prozessorientierten Verarbeitung für Echtzeit-Rückmeldungen durch \emph{PureData} und dessen eigene Echtzeitverarbeitung schienen für die Untersuchungspersonen annehmbar zu sein. Untersuchungspersonen, die in einem Interview berichteten, sich intensiver mit der Verklanglichung beschäftigt zu haben, waren in der Lage den Grundtakt der Verklanglichung den biomechanischen Merkmalen der Gehbewegung zuzuordnen.
-
-\subsection{Diskussion} 
-Das Ergebnis zeigt keinen Effekt der Verklanglichung auf das Flow-Erleben gemessen durch den Generalfaktor der \ac{FKS}. Ein Problem könnte, wie in den vorherigen Diskussionen erläutert, die Operationalisierung durch die \ac{FKS} darstellen. In der vorliegenden Studie könnten aber auch die extremen äußeren Einflüsse durch das Gehen zu einem individuellen Ort (wie z.~B. zur Arbeit in Bremen) eine größere Aufmerksamkeit auf sich gezogen haben als die Verklanglichung selber. Des Weiteren könnte die Tätigkeit des Gehens wegen ihrer geringen Anforderungen an die Untersuchungspersonen gar kein Flow-Erleben ausgelöst haben und das primäre Ziel der Verklanglichung nicht darin bestand, die Voraussetzungen für Flow-Erleben beim Gehen zu verbessern, sondern das allgemeine Erleben beim Gehen zu unterstützen. 
-
-Nichtsdestotrotz zeigen wir mit dem Demonstrator, dass unser \emph{Close-Loop}-Ansatz in Form eines \emph{Realtime Biofeedback} Systems mit einem heute erschwinglichen Smartphone mit Kreiselinstrument praktikabel ist. Unter der Berücksichtigung von zwei Echtzeitverarbeitungen in \emph{iOS} und der eingebetteten \emph{PureData}-Umgebung konnten wir keine zu langen Latenzzeiten ausmachen. Eine Erweiterung durch eine impliziten Messung wie z.~B. der kardio-lokomotorischen Phasensynchronisation halte ich für realisierbar, da wir die Anbindung zwischen \emph{BioHarness 3} und iPhone über \emph{Bluetooth LE} schon entwickelt haben. Bei der Berechnung z.~B. des normalisierten Shannon Entropie Indexes müssten wir die Fensterung von 30 Sekunden berücksichtigen, d. h. der aktuelle Wert, den das System für eine Rückmeldung nutzen kann, wurde aus einer Aggregation der letzten 30 Sekunden berechnet. 
-
-\section{Zusammenfassung}
-In diesem Kapitel beschrieb ich am Beispiel des Demonstrators des \acs{BMBF}-Projekts, wie eine Integration einer impliziten Messung des Flow-Erlebens und dessen konkrete Unterstützung aussehen könnte. Ich gab eine kurze Beschreibung des Demonstrators und berichtete über ein Teilergebnis der Projektstudie des \acs{BMBF}-Projekts, in der ich den Effekt einer Verklanglichung der Gehaktivität auf das Flow-Erleben testete.
+% chapter integration_in_eine_assistierende_echtzeit_benutzerschnittstelle (end)

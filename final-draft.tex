@@ -1,6 +1,9 @@
-% ******************************* PhD Thesis Template **************************
-\documentclass[12pt, twoside=semi, DIV=calc, pagesize, parskip=half, listof=totoc, bibliography=totoc, open=right, listof=nochaptergap, draft]{scrreprt} % BCOR=12mm,
 
+
+% ******************************* PhD Thesis Template **************************
+\documentclass[12pt, twoside=semi, DIV=calc, pagesize, parskip=half, listof=totoc, bibliography=totoc, open=right, listof=nochaptergap, final]{scrreprt} 
+
+% BCOR=12mm,
 % ********************************** Preamble **********************************
 % Preamble: Contains packages and user-defined commands and settings
 \input{Preamble/preamble}
@@ -12,49 +15,43 @@
 % ******************************** Front Matter ********************************
 \begin{document}
 
-\cleardoublepage\
-\pagenumbering{Alph}
+\pagenumbering{Alph} 
 \pagestyle{empty}
 
 \include{Titelseite/titelseite}
+
 % \include{Bekanntgabe/bekanntgabe}
 % \include{Danksagung/danksagung}
 % \include{Zusammenfassung/zusammenfassung}
-
 % *********************** Adding TOC and List of Figures ***********************
-\cleardoublepage\
-\pagenumbering{Roman}
+\cleardoublepage\ 
+\pagenumbering{Roman} 
 \pagestyle{plain}
 
-\tableofcontents
-\listoffigures
-\listoftables
-\input{kurzworte}
+\tableofcontents \listoffigures \listoftables \input{kurzworte}
 
 % ******************************** Main Matter *********************************
-\cleardoublepage\
-\pagenumbering{arabic}
+\cleardoublepage\ 
+\pagenumbering{arabic} 
 \pagestyle{plain}
 
-\include{Abschnitte/einleitung}
-\include{Abschnitte/technologie_beim_laufen}
-\include{Abschnitte/flow_erleben_messen}
-% \include{Abschnitte/anforderungen}
-% \include{Abschnitte/studien}
-% \include{Abschnitte/integration}
-% \include{Abschnitte/diskussion}
-% \include{Abschnitte/beitrag-und-ausblick}
+\include{Abschnitte/einleitung} 
+\include{Abschnitte/technologie_beim_laufen} 
+\include{Abschnitte/flow_erleben_messen} 
+\include{Abschnitte/anforderungen} 
+\include{Abschnitte/studien} 
+\include{Abschnitte/integration} 
+\include{Abschnitte/diskussion} 
+\include{Abschnitte/beitrag_und_ausblick}
 
 % ********************************** Back Matter *******************************
-
 % ********************************** Appendices ********************************
 % \appendix
 %
 % \include{Anhang/studiendokumente}
 % \include{Anhang/studienergebnisse}
-% \include{Anhang/source-code}
-
+% \include{Anhang/source_code}
 % ********************************** Bibliography ******************************
 \printbibliography\
 
-\end{document}
+\end{document} 
