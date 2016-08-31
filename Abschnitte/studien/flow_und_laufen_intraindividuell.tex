@@ -6,4 +6,74 @@
 % (fold)
 \label{sec:flow_und_laufen_intraindividuell}
 
+\section{Einleitung} % (fold)
+\label{sec:einleitung_5_1}
+
+Ziel der in diesem Abschnitt beschriebenen Studie war es, zu untersuchen, ob subjektive, durch Experience Sampling erhobene, Flow-Merkmale mit den nachfolgenden Kandidaten für ein implizites Messverfahren des Flow-Erlebens beim Laufen in einem Zusammenhang stehen (Abschnitt~\ref{sec:herangehensweise}, Schritt 2):
+
+\begin{itemize}
+	\item mittlere HR
+	\item \acs{RMSSD} der zeitbezogenen statitischen \ac{HRV}-Analyse
+	\item Bewegungsaufwand (Abschnitt~\ref{ssub:der_bewegungsfluss}) oder
+	\item normalisierter Shannon Entropie Index der kardio-lokomotorischen Phasensynchronisation (Abschnitt~\ref{ssub:die_kardio_lokomotorische_phasensynchronisation})
+\end{itemize}
+
+Die Auswahl der Merkmale begründe ich durch:
+
+\begin{enumerate}
+	\item ihre nachgewiesenen Zusammenhänge zum Flow-Erleben bei Tätigkeiten mit geringer physischer Beansprung (Abschnitt~\ref{ssub:kardiovaskulare_messungen}) 
+	\item die Praktikabilität bei der Ausführung einer physisch belastenden Tätigkeit
+\end{enumerate}
+
+Aufgrund der durch das \acs{BMBF}-Projekt bereitgestellten Shimmer \acp{IMU}, nutze ich ein Shimmer EKG-Modul, das auf die Hauptplatine einer Shimmer \ac{IMU} aufgesetzt wird. Das Shimmer EKG-Modul arbeitet mit der Ableitung nach Einthoven \citep[][S.~85ff.]{Behrends2002}. Es handelt sich um eine bipolare Extremitätenableitung, die man routinemäßig mit drei Elektroden plus einer Erdungselektrode erfasst. Ich platziere vier konventionelle Einwegelektroden auf der Körperoberfläche und verbinden sie mit vier Kabelverbindungen mit dem Shimmer EKG-Modul wie in Abbildung~\ref{fig:5_1_equipment_setup} dargestellt. Damit erfasst das Shimmer EKG-Modul mit zwei Kanälen die zwei Ableitungen (II-III). Ableitung I berechne ich, indem ich das Signal von LA-LL von dem Signal von RA-LL subtrahiere.
+
+\begin{itemize}
+	\item Ableitung I: zwischen rechtem und linkem Arm (RA-LA)
+	\item Ableitung II: zwischen rechtem Arm und linkem Bein (RA-LL)
+	\item Ableitung III: zwischen linkem Arm und linkem Bein (LA-LL)
+\end{itemize}
+
+Die Ableitung nach Einthoven dient zur Darstellung von Potenzialänderungen in der Frontalebene und ermöglicht u. a. die Identifikation von Herzschlägen, die wir zur Analyse der \ac{HRV} benötigen.
+
+Wie in Abschnitt~\ref{ssub:kardiovaskulare_messungen} zusammengefasst, handelt es sich bei der \acs{RMSSD} um ein physiologisches Merkmal der zeitbezogenen statitischen \ac{HRV}-Analyse, mit dem \citet{Keller2011} bei einer sitzenden Tätigkeit Zusammenhänge mit Flow-Erleben feststellten. Auf Zusammenhanganalysen mit frequenzbezogenen \ac{HRV}-Merkmalen verzichtete ich aufgrund der in Abschnitt~\ref{sub:zuordnung} beschriebenen Probleme.
+
+Kinematische Daten messe ich mit den bereitgestellten Shimmer \acp{IMU} und einem zusätzlichen Shimmer Gyro-Modul. Die kinematischen Daten benötige ich, um einzelne sich wiederholende Bewegungsabläufe der Bewegung zu erkennen und den Bewegungsaufwand zu berechnen. Zusätzliche kinematische Merkmale, die z.~B. Abschnitt~\ref{sub:lauftechnik_detektionstechnologie} beschreibt, berücksichtigte ich nicht.
+
+Die Anordnung des Equipments und die Zuverlässigkeit des Gesamtsystems testete ich in Vorab-Tests mit drei Freiwilligen aus der Fakultät 4 der Hochschule Bremen. Für die Vorab-Tests verwendete ich denselben Aufbau des Systems, der bei dieser Studie zum Einsatz kam (siehe Abschnitt~\ref{sub:apparat}).
+
+\begin{figure}[t]
+	\centering
+		\includegraphics[width=1.00\textwidth]{5_1_equipment_setup}
+	\caption[Equipment der ersten Studie zum Flow-Erleben beim Laufen]{Equipment der ersten Studie zum Flow-Erleben beim Laufen}
+	\label{fig:5_1_equipment_setup}
+\end{figure}
+
+% section einleitung (end)
+
+\section{Methode} % (fold)
+\label{sec:methode}
+
+\citet[][S.~989]{Strohrmann2012} argumentieren, Untersuchungen in Außen-Umgebungen durchzuführen, da sich das Laufen auf einem Laufband von dem Laufen in Außen-Umgebungen in Bezug auf kinematische Merkmale unterscheidet. Aus dem genannten Grund entschied ich mich, die Läufe unter realen Bedingungen durchzuführen. Untersuchungen außerhalb von Laboratorien stellen bei ihrer Durchführung eine Herausforderung dar. Außen-Umgebungen sind in einem hohen Maße veränderlich und kontextsensitive Faktoren als Einflüsse auf Merkmale sind sind grundsätzlich als gegeben anzunehmen. Gleichwohl sind solche Untersuchungen unerlässlich, um eine realistischere Einschätzung der Nutzung in Außen-Umgebungen zu ermöglichen.
+
+Für die in diesem Abschnitt dokumentierte Studie setzte ich ein Echtzeit-Datenerfassungsverfahren (real-time data capture) ein. Die Datenerfassung umfasst \ac{EKG}-Daten und kinematische Daten sowie Selbstauskünfte durch die \ac{FKS}. Die aufgezeichneten Datenströme eines einzelnen Bewegungsablaufs beim Laufen sind in Abbildung~\ref{fig:5_2_daten} dargestellt. Der Bewegungsablauf beginnt und endet mit dem mittleren Schwung des rechten Beines (negative Signalspitze der Winkelgeschwindigkeit um die X-Achse (grün)).
+
+\begin{sidewaysfigure}
+	\resizebox{1.00\textwidth}{!}{%
+	    \input{./tikz/5_2_daten}
+	}%
+	\caption[Aufgenommene Datenströme beim Laufen]{Aufgenommene Datenströme eines Bewegungsaublaufs in der ersten Studie zum Flow-Erleben beim Laufen. Von links nach rechts: (schwarz) EKG-Ableitung RA-LL und EKG-Ableitung LA-LL; (grün) Beschleunigung in X-Richtung und Winkelgeschwindigkeit um die X Achse; (blau) Beschleunigung in Y-Richtung und Winkelgeschwindigkeit um die Y-Achse; (rot) Beschleunigung in Z-Richtung und Winkelgeschwindigkeit um die Z-Achse}
+	\label{fig:5_2_daten}
+\end{sidewaysfigure}
+
+Ich orientiere mich am Vorgehen des Experiments von \citet{Reinhardt2006} und der Studie von \citet{Schuler2009}. Wie bei Reinhardt führe ich eine Befragung an vordefinierten Zeitmarken durch, an denen die Untersuchungsperson die Lauftätigkeit kurzzeitig unterbricht. Im Gegensatz zu \citet{Reinhardt2006} ist der zweite Schritt der beschriebenen Studie in der Korrelationsforschung anzusiedeln. Der erste Schritt ist das Sammeln von Daten und dritte Schritt ist die Untersuchung des zeitlichen Verhaltens (Prozess) der gesammelten Daten. Mit Blick auf die Korrelationsforschung besitzt die Studie Gemeinsamkeiten mit der Studie von \citet{Schuler2009}. \citet{Schuler2009} führen in ihrer dritten Studie Befragungen im Gegensatz zu dieser Studie mit intervall-kontingenten Untersuchungsprotokol nach vordefinieren Kilometermarken beim Marathonlaufen durch.
+
+Die gesamte Studie bestand aus einer initialen Sitzung und sechs Sitzungen mit einer Zeitdauer von etwa 1,5 Stunden. In der Zeit rüstete ich die Untersuchungsperson aus und führte vor dem Lauf eine Befragung mit der \ac{FKS} nach einer 15-minütigen Ruhephase durch. Ich gab keine Anweisung und keine Hilfestellung zur Beantwortung. Anschließend führte die Untersuchungsperson einen Lauf von etwa einer Stunde durch. Die Sitzungstermine verteilte ich auf sechs aufeinanderfolgende Donnerstage im Spätherbst 2013. Der Start der Sitzungen variierte zwischen 17:15 Uhr und 18:30 Uhr.
+
+% section methode (end)
+
+\subsection{apparat} % (fold)
+\label{sub:apparat}
+
+% subsection apparat (end)
+
 % section flow_und_laufen_intraindividuell (end)
