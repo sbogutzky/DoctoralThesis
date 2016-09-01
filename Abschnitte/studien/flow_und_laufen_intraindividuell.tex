@@ -230,6 +230,22 @@ Die Reliabilität des Generalfaktors und der Absorbiertheit weisen mit 0,81 und 
 
 % subsubsection selbstauskunfte (end)
 
+\subsubsection{Kardiovaskuläre Messungen} % (fold)
+\label{ssub:kardiovaskulare_messungen_1}
+
+Zu jedem Befragungszeitpunkt gehören ca. 15 Minuten an \ac{EKG}-Daten, die der \ac{PPC} vor jeder Befragung aufzeichnete. Es sind ca. 15 Minuten, da der Signalgeber nach 15 Minuten die Untersuchungsperson auffordert, eine Selbstauskunft abzugeben. Das gewährleistete nicht in allen Fällen das Stehenbleiben und das Ausfüllen. Aus diesem Grund verwendete ich die Daten bis zum letzten erkannten Laufschritt vor der Fertigstellung des Fragebogens. Den letzten Laufschritt identifizierte ich im Nachhinein. Der Organismus der Untersuchungsperson kam im Verlauf der Befragung zur Ruhe, was zu einer niedrigeren \ac{HR} am Anfang der Läufe und nach jeder Befragung führte. Daher nutzte ich die \textbf{zwölf Minuten} vor dem letzten erkannten Laufschritt für die Analyse. Zur Weiterverarbeitung nutze ich die Ableitung III, da sie die größten R-Spitzen aufwieß. Die R-Spitzen-Erkennung von Kubios HRV identifiziert in aller Regel die R-Spitzen automatisch (abhängig von der Signalgüte), trotzdem ist eine manuelle Nachbearbeitung notwendig. Nicht erkannte R-Spitzen fügte ich hinzu und zu viel erkannte R-Spitzen entfernte ich.
+
+Ich verwendete eine Grenze bis 5~\%, d. h. alle Datenreihen mit mehr als 5~\% Störsignalen (Artefakte) berücksichtigte ich nicht. Es gilt, um zuverlässige Ergebnisse vor allem mit den frequenzbezogenen Methoden zu erhalten, dass das Signal in Relation zu der Signallänge wenige Artefakte erhalten sollte \citep[z.~B. < 5 - 10~\%][S.~77]{Sammito2015}. \textbf{Sechs \ac{EKG}-Datenreihen besaßen über 5~\% Artefakte. Vier der sechs Datenreihen stammten von der ersten Zeitreihe nach 15 Minuten. Aus diesem Grund und wegen einer längeren Anlaufzeit zu Beginn des Laufes entschloss ich mich, die Zeitreihen vor der 15.~Minute komplett aus der Datenbasis zu entnehmen.} Ich erhielt durch den beschriebenen Analyseschritt 15 Zeitreihen von RR-Intervallen und 15 Werte der mittleren \ac{HR} und der \acs{RMSSD}.
+
+% subsubsection kardiovaskulare_messungen (end)
+
+\subsubsection{Bewegungsaufwand} % (fold)
+\label{ssub:bewegungsaufwand_1}
+
+Das Merkmal des mittleren Bewegungsaufwands (Abschnitt~\ref{ssub:der_bewegungsfluss}) berechnete ich für die \textbf{zwölf Minuten} vor dem letzten erkannten Laufschritt vor der Fertigstellung des Fragebogens. Das R-Programm filterte die gemessene Beschleunigung entlang des koronaren Schnittes (von rechts nach links, x-Achse), entlang des sagittalen Schnittes (von unten nach oben, y-Achse) und entlang des axialen Schnittes (von hinten nach vorne, z-Achse) mit den optimalen Grenzfrequenzen von 1,5 Hz, 4,0~Hz und 5,5 Hz. Im beschriebenen Analyseschritt erhielt ich 18 Mittelwerte des Bewegungsaufwands.
+
+% subsubsection bewegungsaufwand (end)
+
 % subsection operationalisierung_und_gewonnene_daten (end)
 
 % section methode (end)
