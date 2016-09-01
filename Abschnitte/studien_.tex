@@ -1,92 +1,12 @@
-
-
-
-
-
-\begin{figure}[t]
-	\centering
-		\includegraphics[width=1.00\textwidth]{5-5-ekg-modul}
-	\caption[Shimmer EKG-Modul]{Shimmer EKG-Modul -- von oben nach unten: Extra Gehäusedeckel mit Ausgängen für die Verkabelung der Elektroden; Tochterplatine von oben; Tochterplatine von unten. Quelle: Eigene Darstellung}
-	\label{fig:5_5_ekg_modul}
-\end{figure}
-
-\begin{figure}[t]
-	\centering
-		\includegraphics[width=1.00\textwidth]{5-6-gyro-modul}
-	\caption[Shimmer Gyro-Modul]{Shimmer Gyro-Modul -- von oben nach unten: Tochterplatine von oben; Tochterplatine von unten. Quelle: Eigene Darstellung}
-	\label{fig:5_6_gyro_modul}
-\end{figure}
-
-\paragraph{Datenmanagement.}
-Das Datenmanagement des \ac{PPC}s speichert die Untersuchungsdaten in Ordner auf dem \emph{Android} Dateisystem. Die Order erhalten ihren Namen vom Zeitstempel des Anfangs der Untersuchung. In einem Ordner speichert der \ac{PPC} alle Selbstauskünfte und alle Sensordaten einer Untersuchung in Textdateien des Formats \acs{csv}. Selbstauskünfte schreibt das System ohne Verzögerung in eine Textdatei namens "`self-report.csv"'. Die Sensordaten von den \emph{Shimmer} \acp{IMU} und der \ac{GPS}-Einheit sichert das System wegen ihrer Häufigkeit sequenziell. Das heißt, eine vorbestimmte Anzahl an Datensätzen wird im Arbeitsspeicher des Smartphones (abhängig von der jeweiligen eingestellten Abtastrate) gehalten. Erreicht das System die Anzahl eines vorbestimmten Wertes, schreibt es die Datensätze in die jeweilige Textdatei des zugehörigen Sensors. Um den Arbeitsspeicher nicht zu überfüllen, nutzten wir eine \emph{Double-buffering} Strategie. Textdateien erhalten ihren Namen vom Bluetooth-Gerätenamen, worüber auch die Zuordnung der Datensätze beim Speichern erfolgt. \ac{GPS}-Positionen schreibt das System in eine Datei namens "`gps-position.csv"'.
-
-\subsubsection{PsychoPhysioPipeline}
-Die \ac{PPP} realisierte ich einzelnen kleinen \emph{R}-Programmen zur Segmentierung der Untersuchungsdaten, zur Erkennung von Merkmalen und zu deren Analyse. R ist eine Sprache und Umgebung für statistische Berechnungen und Grafiken.
-
-\paragraph{R-Programme zur Segmentierung.}
-Die \emph{R}-Programme mit der geringsten Komplexität segmentieren die Untersuchungsdaten anhand der Start- und Endzeitpunkte der Selbstauskünfte. Sie speichern die Daten in mehrere kleine Textdateien im \acs{csv}-Format. Ich nutze interaktive Grafiken zur visuellen Kontrolle der Daten. Das \emph{R}-Programm zur Segmentierung der \ac{GPS}-Positionen versah ich mit einer Funktion, die \acs{KML}-Dateien herausschreibt. \acs{KML}-Dateien ermöglichen mir, den zeitlichen Verlauf einer Sitzung in \emph{Google Earth} nachzuvollziehen.
-
-\paragraph{Kubios HRV zur HRV-Analyse.}
-Nach der Segmentierung der \ac{EKG}-Daten führe ich die Analyse der \ac{HRV} in \emph{Kubios HRV} durch. \emph{Kubios HRV} ist eine fortschrittliche und einfache Software für die Analyse der \ac{HRV} \citep{Tarvainen2014}. \emph{Kubios HRV} ist freie Software und wurde mit \emph{MATLAB} entwickelt. Mit \emph{Kubios HRV} speichere ich ggf. zeitbezogene, frequenzbezogene und nicht lineare \ac{HRV}-Parameter und die Zeitreihe der R-Spitzen in Textdateien im txt-Format.
-
-\paragraph{R-Programme zur Erkennung.}
-\label{par:r_programme_zur_erkennung}
-Mit einem \emph{R}-Programm berechne ich die Faktoren der \ac{FKS} jeder Selbstauskunft und schreibe sie in eine Textdatei im \acs{csv}-Format.
-
-Die Berechnung des Bewegungsaufwands erfolgt nach der Erkennung des mittleren Schwungs der Lauf- oder Gehbewegung. Das ausgeprägte Signalmuster der Winkelgeschwindigkeit um die X-Achse (siehe Abbildung~\ref{fig:5_2_daten}, grünes Signal unten), ermöglicht die Lokalisierung der in Abschnitt~\ref{sec:gehen_und_laufen} beschriebenen biomechanischen Merkmale. Das Muster besteht aus zwei Maxima (positive Signalspitze) auf beiden Seiten eines Minimums (negatives Signalspitze). Die beiden positiven Signalspitzen ordnen wir dem Aufsetzen des Fußes (\ac{IC}) und dem Anheben des Fußes (\ac{IS}) zu \citep[vgl.][]{Aminian2002}. Die negative Signalspitze ist dem mittleren Schwung (\ac{MS}) zuzuordnen \citep[vgl.][]{Aminian2002}.
-
-Durch eine zweifache Filterung des Signals mit personenindividuellen Grenzfrequenzen bestimmt das \emph{R}-Programm nacheinander die negative Spitze des mittleren Schwungs in den gefilterten Signalen. Die Technik vermindert fehlerhafte Erkennungen bei Lokalisierungen im Rohsignal \citep[vgl.][]{Lee2011}. Ich entferne Erkennungen zwischen personenindividuell auswählbaren Grenzen (z.~B. -200 und 200 $deg \cdot s^{-1}$), da Erkennungen in diesen individuellen Grenzen keinem biomechanischen Merkmal zuzuordnen sind. Nach einer visuellen Kontrolle durch interaktive Grafiken speichert das \emph{R}-Programm die Zeitstempel der \ac{MS}-Erkennungen in eine Textdatei im \acs{csv}-Format für weitere Arbeitschritte.
-
-Zur Berechnung des Bewegungsaufwands glättet ein weiteres \emph{R}-Programm die Beschleunigungsdaten mit einem Null-Phasen Butterworth Tiefpassfilter vierter Ordnung nach dem Beispiel von \citet{Hreljac2000}. Im Gegensatz zu \citet{Hreljac2000}, der nur zwei dimensionale Beschleunigungsdaten von Filmmaterial aus der sagittalen Ebene extrahiert, nutze ich die drei Dimension, die mir der Beschleunigungsmesser, der \emph{Shimmer} \ac{IMU} liefert. Damit verspreche ich mir eine genauere Beschreibung des Bewegungsaufwands.
-
-Die Beschleunigung ist die Summe von Gravitation und lineare Beschleunigung (Benutzerbeschleunigung). Zur Berechnung beider Beschleunigungen und zur einzelnen Betrachtung der Benutzerbeschleunigung ist die Schätzung der Orientierung der \emph{Shimmer} \acp{IMU} im dreidimensionalen Raum notwendig. Unter Verwendung des Beschleunigungsmessers und des Kreiselinstruments, ist die Schätzung der Orientierung der \emph{Shimmer} \ac{IMU} relativ zu ihrer anfänglichen Orientierung möglich. Für eine vollständige Lösung des Orientierungsproblems, die eine absolute Schätzung beinhaltet, ist ein Magnetometer erforderlich. Die Entwicklung eines Algorithmus zur Schätzung der Orientierung eines Objekts im dreidimensionalen Raum ist ein eigenes Forschungsthema. Viele Lösungen für das Orientierungsproblem sind in der Literatur zu finden. Ein Beispiel sowohl für einen relativen Algorithmus und einen absoluten Algorithmus geben \citet{Madgwick2011}. Aus dem Grund der Komplexität der vorhandenen Lösungen und da ich Vergleiche von Bewegungsaufwänden von verschiedenen Messungen auf gleicher Berechnungsgrundlage durchführe, nehme ich keine Schätzung der Orientierung vor und nutze zur Berechnung des Bewegungsaufwands die Summe von Gravitation und linearer Beschleunigung.
-
-Die optimalen Grenzfrequenzen zur Glättung der Beschleunigungsdaten im dreidimensionalen Raum (x, y, z) bestimmt das Programm aus allen in Datenbasis enthaltenen Beschleunigungsdaten unter Verwendung der Restwertmethode von \citet{Wells1980}.
-
-Nach der Glättung trennt das \emph{R}-Programm die Beschleunigungen in \mbox{x-, y-, z-Richtung} anhand der \ac{MS}-Erkennungen und berechnet den Bewegungsaufwand für jeden einzelnen Bewegungsablauf mit nachfolgender Formel:
-
-\begin{equation}
-	Bewegungsaufwand = \int^T_0 \left\langle {Ruck^2_{x}(t) + Ruck^2_{y}(t) + Ruck^2_{z}(t)}\right\rangle dt
-\end{equation}
-
-Bewegungsabläufe von einer Dauer über 1,3 Sekunden entfernt das \emph{R}-Programm, um Unterbrechungen der Lauf- oder Gehtätigkeiten auf Grund ihres geringen Bewegungsaufwands nicht einzubeziehen. Nach einer visuellen Kontrolle durch interaktive Grafiken speichert das \emph{R}-Programm die Zeitpunkte, die Dauer und den Bewegungsaufwand der einzelnen Bewegungsabläufe in eine Textdatei im \acs{csv}-Format.
-
-Die kardio-lokomotorischen Phasensynchronisation interpretieren \citet[][S.~12]{Niizeki2014} als ein konsistentes Auftreten eines Herzschlages in der gleichen relativen Phase aufeinanderfolgender Bewegungsablaufe. Das heißt, z.~B. bei einer hohen kardio-lokomotorischen Phasensynchronisation beim Laufen tritt der Herzschlag in der Regel auf, wenn das Bein einen relativen Weg zurückgelegt hat. Die relative Phase beschreibt die Beziehung zwischen Herzschlag und zurückgelegten Weg im Bewegungsablauf. Zu ihrer Berechnung benötigen wir die momentanen Phasen der beiden Oszillatoren (Herz und Bewegungsapparat). Es gibt zwei Vorgehen die momentanen Phasen zu berechnen: ein ereignis-bezogenes Vorgehen und ein signalanalytisches Vorgehen. In der vorliegenden Arbeit beschränke ich mich auf die Erklärung des ereignisbezogenen Vorgehens, da ich die Zeitpunkte unserer beiden Ereignisse (R-Spitze und \ac{MS}) in den vorherigen Verarbeitungsschritten bestimme. Abbildung~\ref{fig:5_7_ereignisse_der_klps} stellt die aufeinanderfolgenden Ereignisse dar.
-
-\begin{figure}[t]
-	\centering
-		\includegraphics[width=1.00\textwidth]{5-7-ereignisse-der-klps}
-	\caption[Grundlage der Berechnung der kardio-lokomotorischen Phasensynchronisation]{Grundlage der Berechnung der kardio-lokomotorischen Phasensynchronisation. Quelle: Eigene Darstellung}
-	\label{fig:5_7_ereignisse_der_klps}
-\end{figure}
-
-Innerhalb eines Zyklus berechnet ich die momentane Phase mit:
-
-\begin{equation}
-	\phi(t) = 2 \pi \frac{t-t_{k}}{t_{k+1}-t_{k}} + 2 \pi k,
-\end{equation}
-
-wobei $t_{k}$ der Zeit des k-ten Ereignisses entspricht. Die relative Phase für das Auftreten eines Herzschlages bezüglich des Bewegungsablauf berechnen wir demzufolge mit:
-
-\begin{equation}
-	\Psi(t_{k}) = 1 \frac{\phi_{L}(t_{k}) \bmod 2 \pi}{2 \pi},
-\end{equation}
-
-wobei $t_{k}$ der Zeit des k-ten Auftretens eines Herzschlags und $\phi_{L}$ der momentanen Phase des Bewegungsablaufs entspricht. Stellen wir $\Psi(t_{k})$ über $t_{k}$ dar, erhalten wir das kardio-lokomotorische Synchrogramm. Mit Hilfe des Synchrogramms bin ich in der Lage nachfolgende Aussagen zu treffen:
-
-Sind beiden rhythmischen Oszillatoren unabhängig voneinander, gibt es keine bevorzugte Phase. Die Verteilung von $\Psi(t_{k})$ ist zufällig. Tritt alternativ eine $n:m$ Phasensynchronisation auf, d. h. $\Psi(t_{k})$ tritt genau zu den gleichen $n$ Werten innerhalb der $m$ Bewegungsablauf auf, beobachten wir $n$ parallele horizontale Linien.
-
-Die visuelle Bestimmung der Synchronität erfolgt über ein \emph{R}-Programm. Das Programm berechnet zusätzlich den Phasenkohärenz Index \citep{Rosenblum2003} und den normalisierten Shannon Entropie Index \citep{Tass1998, Niizeki2005} zur Quantifizierung der kardio-lokomotorischen Phasensynchronisation und stellt sie dar. Indices und Phasen sichert das Programm in einer Textdatei im \acs{csv}-Format.
-
 \subsection{Operationalisierung und gewonnene Daten}
 \subsubsection{Selbstauskünfte}
 Auf der Grundlage der sechs Sitzungen erhielt ich 24 Selbstauskünfte durch die Befragung mit der \ac{FKS}. Die \ac{FKS} besitzt nach \citet{Rheinberg2003} eine hohe Güte. Nichtsdestotrotz überprüfte ich die gewonnenen Daten nochmals auf ihre Eignung. Ich garantiere damit, dass die aus der Skala ermittelten Messwerte, die zu beschreibenden Faktoren mit hoher Reliabilität wiedergeben. Gleichzeitig prüfe ich, ob ich die \ac{FKS} im vorliegenden Einzelfall einer laufenden Person erfolgreich eingesetzt habe.
 
-Zu Verifizierung betrachtete ich die 24 Selbstauskünfte und bestimmte den Mittelwert und die Standardabweichung jedes Items des Generalfaktors und der beiden Faktoren der \ac{FKS}. Ebenso berechnete ich für jeden Faktor und dessen Items die Item-Faktor-Korrelation. Die Item-Faktor-Korrelation dient häufig als Testgröße der Trennschärfe. Je höher und gleichmäßiger die Trennschärfe ist, desto höher ist die Konsistenz zwischen den Items und desto besser die verwendete Skala. Als Daumenregel gilt, eine Trennschärfe von größer als 0,5 ist passend. Solange die Items nur geringfügig unter 0,5 liegen, sieht man sie als vertretbar an. Wichtig ist in jedem Fall, dass keine der Trennschärfen signifikant von allen übrigen abweicht und dass die Trennschärfen niemals negativ sind \citep[vgl.][S.~219f.]{Bortz2006}.
+Zur Verifizierung betrachtete ich die 24 Selbstauskünfte und bestimmte den Mittelwert und die Standardabweichung jedes Items des Generalfaktors und der beiden Faktoren der \ac{FKS}. Ebenso berechnete ich für jeden Faktor und dessen Items die Item-Faktor-Korrelation. Die Item-Faktor-Korrelation dient häufig als Testgröße der Trennschärfe. Je höher und gleichmäßiger die Trennschärfe ist, desto höher ist die Konsistenz zwischen den Items und desto besser die verwendete Skala. Als Daumenregel gilt, eine Trennschärfe von größer als 0,5 ist passend. Solange die Items nur geringfügig unter 0,5 liegen, sieht man sie als vertretbar an. Wichtig ist in jedem Fall, dass keine der Trennschärfen signifikant von allen übrigen abweicht und dass die Trennschärfen niemals negativ sind \citep[][S.~219f.]{Bortz2006}.
 
-Neben der Trennschärfe der einzelnen Items bestimmte ich für die Faktoren der \ac{FKS} die Maßzahl Cronbachs~$\alpha$, um festzustellen, inwieweit ich die Faktoren zur Messung der einzelnen latenten Wirkungsdimensionen heranziehen kann. Das Cronbachs~$\alpha$ ist eine in den Wirtschafts- und Sozialwissenschaften häufig verwendetes Reliabilitätskriterium in der Testkonstruktion und -evaluation. Vernünftige Werte für das Cronbachs~$\alpha$ sind größer 0,7 \citep[vgl.][S.~189f.]{Bortz2006}.
+Neben der Trennschärfe der einzelnen Items bestimmte ich für die Faktoren der \ac{FKS} die Maßzahl Cronbachs~$\alpha$, um festzustellen, inwieweit ich die Faktoren zur Messung der einzelnen latenten Wirkungsdimensionen heranziehen kann. Das Cronbachs~$\alpha$ ist eine in den Wirtschafts- und Sozialwissenschaften häufig verwendetes Reliabilitätskriterium in der Testkonstruktion und -evaluation. Vernünftige Werte für das Cronbachs~$\alpha$ sind größer 0,7 \citep[][S.~189f.]{Bortz2006}.
 
-Die Reliabilität des Generalfaktors und der Absorbiertheit weisen mit 0,81 und 0,77 auf eine gute Eignung hin. Die Reliabilität des glatten Verlaufs ist mit 0,68 akzeptabel. Die Trennschärfen sind bis auf die Items "`Mein Kopf ist völlig klar."' und "`Ich weiß bei jedem Schritt, was ich zu tun habe."' für den Generalfaktor, bei denen die Trennschärfe unter 0,4 liegt, akzeptabel. In der Untersuchung hatte das Ergebnis für die Items keine Konsequenzen, da es sich bei \ac{FKS} um eine wissenschaftlich eingehend untersuchte Skala handelt und da ich mögliche inhaltliche Verfälschungen durch weglassen von Items vermeiden wollte.
+Die Reliabilität des Generalfaktors und der Absorbiertheit weisen mit 0,81 und 0,77 auf eine gute Eignung hin. Die Reliabilität des glatten Verlaufs ist mit 0,68 akzeptabel. Die Trennschärfen sind bis auf die Items „Mein Kopf ist völlig klar.“ und „Ich weiß bei jedem Schritt, was ich zu tun habe.“ für den Generalfaktor, bei denen die Trennschärfe unter 0,4 liegt, akzeptabel (Tabellen~\ref{tab:generalfaktor_erste_studie_laufen}, \ref{tab:glatter_verlauf_erste_studie_laufen} und \ref{tab:absorbiertheit_erste_studie_laufen}). In der Untersuchung hatte das Ergebnis für die Items keine Konsequenzen, da es sich bei \ac{FKS} um eine wissenschaftlich eingehend untersuchte Skala handelt und da ich mögliche inhaltliche Verfälschungen durch weglassen von Items vermeiden wollte.
 
 \subsubsection{Kardiovaskuläre Messungen}
 \label{ssub:kardiovaskulaere_messungen_1}
