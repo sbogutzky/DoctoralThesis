@@ -14,6 +14,7 @@ Ziel der in diesem Abschnitt beschriebenen Studie war es, zu untersuchen, ob sub
 \begin{itemize}
 	\item mittlere \ac{HR}
 	\item \acs{RMSSD} der zeitbezogenen statitischen \ac{HRV}-Analyse
+	\item mittlere Doppelschrittfrequenz
 	\item Bewegungsaufwand (Abschnitt~\ref{ssub:der_bewegungsfluss}) oder
 	\item normalisierter Shannon Entropie Index der kardio-lokomotorischen Phasensynchronisation (Abschnitt~\ref{ssub:die_kardio_lokomotorische_phasensynchronisation})
 \end{itemize}
@@ -277,7 +278,7 @@ Ich überprüfte Effekte des Messzeitpunkts auf die einzelnen Merkmale mit dem F
 \subsubsection{Korrelationsanalyse} % (fold)
 \label{subs:korrelationsanalyse}
 
-Im den nächsten Analyseschritten vernachlässigte ich die Bedingung der Unabhängigkeit der Stichproben. Ich führte eine bivariate Korrelationsanalyse durch, um lineare Zusammenhänge zwischen den einzelnen Merkmalen zu untersuchen. Die Korrelationmatrix~\ref{tab:korrelationen_erste_studie_laufen} zeigt die signifikante Zusammenhänge zwischen Generalfaktor und seiner beiden Dimension \emph{glatter Handlungsverlauf} und \emph{Absorbiertheit}. Zusätzlich korrelieren beide Dimension positiv. Zwischen den impliziten Merkmalen (mittlere \ac{HR}, \acs{RMSSD}, mittlerer normalisierter Shannon Entropie Index, mittlerer Doppelschrittfrequenz und Bewegungsaufwand) und den explizit erhobenen Flow-Merkmalen konnte ich keine linearen Zusammenhänge feststellen. Weitere signifikante positive Zusammenhänge zeigt die Korrelationsmatrix zwischen \ac{AFP} und mittlerer \ac{HR} und zwischen mittlerer Doppelschrittfrequenz und mittlerem Bewegungsaufwand.
+Im den nächsten Analyseschritten vernachlässigte ich die Bedingung der Unabhängigkeit der Stichproben. Ich führte eine bivariate Korrelationsanalyse durch, um lineare Zusammenhänge zwischen den einzelnen Merkmalen zu untersuchen. Die Korrelationmatrix~\ref{tab:korrelationen_erste_studie_laufen} zeigt die signifikante Zusammenhänge zwischen Generalfaktor und seiner beiden Dimension \emph{glatter Verlauf} und \emph{Absorbiertheit}. Zusätzlich korrelieren beide Dimension positiv. Zwischen den impliziten Merkmalen (mittlere \ac{HR}, \acs{RMSSD}, mittlerer normalisierter Shannon Entropie Index, mittlerer Doppelschrittfrequenz und Bewegungsaufwand) und den explizit erhobenen Flow-Merkmalen konnte ich keine linearen Zusammenhänge feststellen. Weitere signifikante positive Zusammenhänge zeigt die Korrelationsmatrix zwischen \ac{AFP} und mittlerer \ac{HR} und zwischen mittlerer Doppelschrittfrequenz und mittlerem Bewegungsaufwand.
 
 \begin{sidewaystable}
 \centering
@@ -305,7 +306,15 @@ Im den nächsten Analyseschritten vernachlässigte ich die Bedingung der Unabhä
 \subsubsection{Regressionsanalyse} % (fold)
 \label{ssub:regressionsanalyse}
 
-Ich führte Regressionsanalysen durch, um quadratische Zusammenhänge wie z.~B. bei \citet{Peifer2014} zu finden ($y=\beta_{0}+\beta_{1}x+\beta_{2}x^{2}+e$). Dabei testete ich quardratische Ausdrücke auf der Seite der unabhängigen Variable $x$. Wie bei der Korrelationanalyse wird eine lineare Regression durchgeführt. Zur Bestimmung der Modellparameter $\beta_i$ wird die Methode der kleinsten Quadrate eingesetzt.
+\begin{figure}[ht]
+	\input{./tikz/5_8_regression_analyse}
+	\caption[Quadratische Zusammenhänge zwischen expliziten und impliziten Merkmalen beim Laufen]{Quadratische Zusammenhänge zwischen expliziten und impliziten Merkmalen beim Laufen. (A) Generalfaktor und mittlere Doppelschrittfrequenz; (B) mittlerer Bewegungsaufwand und mittlere HR; (C) Mittlerer normalisierter Shannon Entropie Index und mittlere HR\\ \hspace{\textwidth}\emph{Anmerkung}: Gestrichelte Linie stellt das bestmögliche quardratische Modell dar.}
+	\label{fig:5_8_regression_analyse}
+\end{figure}
+
+Ich führte Regressionsanalysen durch, um quadratische Zusammenhänge wie z.~B. bei \citet{Peifer2014} zu finden ($y=\beta_{0}+\beta_{1}x+\beta_{2}x^{2}+e$). Dabei testete ich quardratische Ausdrücke auf der Seite der unabhängigen Variable $x$. Wie bei der Korrelationanalyse wird eine lineare Regression durchgeführt. Zur Bestimmung der Modellparameter $\beta_i$ wird die Methode der kleinsten Quadrate eingesetzt. 
+
+Ich fand einen signifikanten Zusammenhang zwischen einem expliziten erhobene Merkmal und einem implizit gemessenen Merkmal. Der Zusammenhang von Flow gemessen durch den Generalfaktor und der mittleren Doppelschrittfrequenz drückt sich durch ein umgedrehtes U aus , $R^2 = 0{,}3; F(2, 21) = 4{,}41; p < 0{,}05$ (Abbildung~\ref{fig:5_8_regression_analyse}, A). Alle weiteren signifikanten Zusammenhänge bestehen zwischen zwei implizit gemessenen Merkmalen. Die Ergebnisse zeigen einen Zusammenhang in Form eines Us zwischen dem mittleren Bewegungsaufwand und der mittleren HR , $R^2 = 0{,}33; F(2, 21) = 5{,}11; p < 0{,}05$ (Abbildung~\ref{fig:5_8_regression_analyse}, B) und einen Zusammenhang in Form eines umgedrehten Us zwischen dem mittleren normalisierten Shannon Entropie Index der kardio-lokomotorischen Phasensynchronisation und der mittleren HR , $R^2 = 0{,}64; F(2, 21) = 18{,}85; p < 0{,}001$ (Abbildung~\ref{fig:5_8_regression_analyse}, C).
 
 % subsubsection regressionsanalyse (end)
 
