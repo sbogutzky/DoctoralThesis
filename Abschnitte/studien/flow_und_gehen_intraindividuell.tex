@@ -6,4 +6,121 @@
 % (fold)
 \label{sec:flow_und_gehen_intraindividuell}
 
+\subsection{Einleitung} 
+
+% (fold)
+\label{sub:einleitung_5_2}
+
+Im Kontext des \acs{BMBF}-Projekts entwickelte Barbara Grüter die Hypothese, dass die kardio-lokomotorischen Phasensynchronisation als implizites Merkmal des (Flow-) Erlebens beim Gehen zu verwenden ist. In der in diesem Abschnitt beschriebenen Machbarkeitsstudie überprüften wir diese Hypothese in Zusammenarbeit mit Licinio Roque und Rui Craveirinha (beide von der Universität Coimbra, Portugal). Im Aufbau glich diese Machbarkeitsstudie der in Abschnitt~\ref{sec:flow_und_laufen_intraindividuell} beschriebenen Laufstudie. 
+
+% subsection einleitung (end)
+\subsection{Methode} 
+
+% (fold)
+\label{sub:methode_5_2}
+
+Die gesamte Machbarkeitsstudie bestand aus sechs Sitzungen mit sechs Gängen und einer Zeitdauer von etwa 1,25 Stunden. Die Untersuchungsperson ging für etwa eine Stunde und füllte alle 15 Minuten eine \ac{FKS} auf dem Smartphone aus. Zur Beantwortung der \ac{FKS} gab ich keine Hilfestellung. Die Termine verteilte wir auf sechs Wochentage in zwei aufeinanderfolgenden Wochen im Mai und Juni 2014. Der Start der Sitzungen variierte zwischen 11:45 Uhr und 13:00 Uhr. Die Gehstrecke war 5~km und ist in Abbildung~\ref{fig:landkarte_2} dargestellt.
+\begin{figure}
+	[!htb] \centering 
+	\includegraphics[height=0.50 
+	\textheight]{landkarte_1} \caption[Gehstrecke]{Gehstrecke -- Insgesamt 5~km (erstellt mit OpenStreetMap)} \label{fig:landkarte_2} 
+\end{figure}
+
+In dieser Machbarkeitsstudie ging eine gesunde Frau im Alter von 64 Jahren als zu untersuchende Person. Sie nutzte die Tätigkeit des Gehens, um den Kopf von ihrer beruflichen Tätigkeit frei zubekommen, Stress abzubauen sowie neue Inspirationen zu Themen ihrer Arbeit zu erhalten.
+
+Ich rüstete sie vor jedem Lauf mit einem geladenen Smartphone, einem passenden Smartphone-Armband, zwei geladenen Shimmer \acp{IMU} mit Shimmer Gyro-Modulen, einem geladenen Shimmer \ac{IMU} mit Shimmer EKG-Modul sowie vier Einwegelektroden aus. Die Anordnung des Equipments ist der Abbildung~\ref{fig:equipment_2} zu entnehmen. Die Untersuchungsperson trug beim Gehen das Smartphone in dem passenden Smartphone-Armband am Oberarm, sofern sie es nicht zur Beantwortung einer \ac{FKS} nutzte. 
+\begin{figure}
+	[!htb] \centering 
+	\includegraphics[width=1.00 
+	\textwidth]{equipment_1} \caption[Equipment der Machbarkeitsstudie zum Flow-Erleben beim Gehen]{Equipment der Machbarkeitsstudie zum Flow-Erleben beim Gehen} \label{fig:equipment_2} 
+\end{figure}
+
+% subsection methode (end)
+\subsection{Apparat} 
+
+% (fold)
+\label{sub:apparat_5_2}
+
+In der beschriebenen Machbarkeitsstudie kam die gleiche Version des \ac{PPC}s und der \ac{PPP} zum Einsatz wie in der vorangegangenen Laufstudie. Ich ergänzte das Equipment um eine zweite Shimmer \ac{IMU} mit Gyro-Modul, die ich oberhalb der Hosentasche der Untersuchungsperson fixierte (siehe Abbildung~\ref{fig:equipment_2}). Die Aufnahme der Daten der zweiten Einheit diente zur Entwicklung einer Gangmerkmalerkennung, die für eine Smartphone App realisiert werden sollte, die auf zusätzliche \acp{IMU} verzichten kann (Abschnitt~\ref{sec:demonstrator}). Ich änderte die Sensorkonfiguration, da das Gehen eine geringe Abtastrate der Bewegung verlangt als das Laufen und weil eine zusätzliche \emph{Shimmer} \ac{IMU} mit Gyro-Modul das Datenaufkommen zusätzlich erhöht. Für eine höchstmögliche Auflösung des \ac{EKG}s testete ich die Abtastraten 512~Hz sowie 1024~Hz. Das Shimmer EKG-Modul ist in der Lage mit 1024~Hz abzutasten und die \ac{EKG}-Daten auf einen Flashspeicher zu sichern. Eine sofortige Bluetooth Übertragung ist aber nur bei 512~Hz gewährleistet. Die Konfiguration der beschriebenen Machbarkeitsstudie ist der Tabelle~\ref{tab:sensorkonfiguration_2} zu entnehmen.
+\begin{table}
+	[!htb] \caption[Sensorkonfiguration der Machbarkeitstudie zum Flow-Erleben beim Gehen]{Sensorkonfiguration der Machbarkeitstudie zum Flow-Erleben beim Gehen} \label{tab:sensorkonfiguration_2} \label{tab:sensorkonfiguration_fallstudie_gehen} 
+	\begin{tabularx}
+		{
+		\textwidth}{p{.30
+		\textwidth} p{.20
+		\textwidth} p{.50
+		\textwidth}} \toprule & Abtastrate & Betriebssicherer Messbereich \\
+		\midrule EKG & 512~Hz & \\
+		Beschleunigungsmesser & 56,7~Hz & 1,5~g \\
+		Kreiselinstrument & 56,7~Hz & 500 $deg \cdot s^{-1}$ \\
+		\bottomrule 
+	\end{tabularx}
+\end{table}
+
+Die Berechnung der kardio-lokomotorischen Phasensynchronisation wurde zuerst durch Licinio Roque und Rui Craveirinha in Microsoft Excel realisiert und von mir in das in Abschnitt~\ref{sub:apparat_5_1} beschriebene R-Programm übertragen. 
+
+% subsection apparat (end)
+\subsection{Operationalisierung und gewonnene Daten} 
+
+% (fold)
+\label{sub:operationalisierung_und_gewonnene_daten_5_2}
+
+Ich erhielt aus den sechs Sitzungen 23 Selbstauskünfte durch die Befragung mit der \ac{FKS}. Eine Selbstauskunft fehlt, weil die Untersuchungsperson versehentlich die App bei einer letzten Befragung schloss. Ich betrachtete die 23 Selbstauskünfte zur Verifizierung. Ich ermittelte den Mittelwert, die Standardabweichung jedes Items des Generalfaktors sowie der beiden Faktoren der \ac{FKS}. Für jeden Faktor und dessen Items berechnete ich die Item-Faktor-Korrelation (Tabellen~\ref{tab:generalfaktor_2}, \ref{tab:glatter_verlauf_2} und \ref{tab:absorbiertheit_2}). Daneben bestimmte ich für die Faktoren der \ac{FKS} die Maßzahl Cronbachs~$\alpha$. Die Item-Faktor-Korrelationen und die Reliabilität des Generalfaktors, des glatten Verlaufs und der Absorbiertheit mit Cronbachs~$\alpha$ = 0,98, 0,97 sowie 0,96 weisen auf eine gute Eignung hin. 
+
+Zu jedem Befragungszeitpunkt gehören ca. 15 Minuten an \ac{EKG}-Daten und kinematischen Daten, die der \ac{PPC} vor jeder Befragung aufzeichnete. Es sind ca. 15 Minuten, da der Signalgeber nach 15 Minuten die Untersuchungsperson aufforderte, eine Selbstauskunft abzugeben. Das gewährleistete nicht in allen Fällen das Stehenbleiben und das Ausfüllen. Aus diesem Grund verwendete ich die Daten bis zum letzten erkannten Schritt vor der Fertigstellung des Fragebogens. Den letzten Schritt identifizierte ich im Nachhinein. 
+
+Zur R-Spitzen-Erkennung nutzte ich die Ableitung II, da sie die größten R-Spitzen aufwieß. 
+
+Ich berechnete einen mittleren normalisierten Shannon Entropie Index, um Zusammenhänge zwischen den expliziten Flow-Merkmalen der \ac{FKS} und kardio-lokomotorischen Phasensynchronisation zu untersuchen. Als Datengrundlage nutzte ich wieder die fünf Minuten an Daten direkt vor der Befragung mit der \ac{FKS}.
+
+% subsection operationalisierung_und_gewonnene_daten (end)
+\subsection{Ergebnisse} 
+
+% (fold)
+\label{sub:ergebnisse_5_2}
+
+\subsubsection{Beobachtungen} 
+
+% (fold)
+\label{ssub:beobachtungen_5_2} 
+\begin{figure}
+	[!htb] \input{./tikz/ubersicht_nach_gangen_2} \caption[Übersicht der expliziten und impliziten Merkmale nach Gängen der Machbarkeitsstudie]{Übersicht der expliziten und impliziten Merkmale nach Gängen der Machbarkeitsstudie [$N \approx 4$]} \label{fig:ubersicht_nach_gangen_2} 
+\end{figure}
+\begin{figure}
+	[!htb] \input{./tikz/ubersicht_nach_messzeitpunkten_2} \caption[Übersicht der expliziten und impliziten Merkmale nach Messzeitpunkten der Machbarkeitsstudie]{Übersicht der expliziten und impliziten Merkmale nach Messzeitpunkten der Machbarkeitsstudie [$N \approx 6$]} \label{fig:ubersicht_nach_messzeitpunkten_2} 
+\end{figure}
+
+Betrachten wir in der Gangübersicht die einzelnen Merkmale können wir erkennen, dass die Bewertungen der expliziten Flow-Merkmale erhoben durch die \ac{FKS} eine hohe Varianz aufweisen. Die Bewertung am 27.05 hat im Mittel im Gegensatz zu den anderen Gängen die geringste explizite Merkmalausprägung (Abbildung~\ref{fig:ubersicht_nach_gangen_2}, Reihe 1). Die Doppelschrittfrequenz unterscheidet sich von Tag zu Tag, was mit einer Anpassung der mittleren \ac{HR} einher geht. Eine Ausnahme macht der 5.6, an dem die mittlere \ac{HR} erhöht ist (Abbildung~\ref{fig:ubersicht_nach_gangen_2}, Reihe 1, Spalte 2). In den ersten drei Gängen gab es mehr kardio-lokomotorische Phasensynchronisation gemessen am mittleren normalisierten Shannon Entropie Index als in den letzten drei Gängen. (Abbildung~\ref{fig:ubersicht_nach_gangen_2}, Reihe 2, Spalte 3).
+
+Betrachten wir die einzelnen Merkmale nach Messzeitpunkten können wir ein gleichbleibendes Verhalten der explizit erfagten Flow-Mermale erkennen. Die Untersuchungsperson hat in jeden Gang von Messzeitpukt zu Messzeitpunkt aufsteigend bewertet (Abbildung~\ref{fig:ubersicht_nach_messzeitpunkten_2}, Reihe 1). Die Doppelfrequenz verhält im Mittel gleichbleibend (Abbildung~\ref{fig:ubersicht_nach_messzeitpunkten_2}, Reihe 2, Spalte 1). Die mittlere \ac{HR} fällt im Mittel ab der 30. Minute (Abbildung~\ref{fig:ubersicht_nach_messzeitpunkten_2}, Reihe 2, Spalte 2). Die kardio-lokomotorische Phasensynchronisation steigt von Messzeitpunkt zu Messzeitpunkt (Abbildung~\ref{fig:ubersicht_nach_messzeitpunkten_2}, Reihe 2, Spalte 3). Anders als bei den expliziten Merkmalen gibt es bei der kardiolokomotorischen Phasensynchronisation Ausreißer bei den Messzeitpunkten 45' und 60'. 
+
+Ich überprüfte Effekte des Messzeitpunktes. Der Friedman-Rank-Summen-Tests ergab einen statistisch signifikanten Unterschied zwischen den Messzeitpunkten der Werte des Generalfaktors, $\chi^2 (3) = 14{,}62; p < 0{,}01$, des glatten Verlaufs, $\chi^2 (3) = 14{,}13; p < 0{,}01$, der Absorbiertheit $\chi^2 (3) = 14{,}02; p < 0{,}01$ und der \ac{HF} der \ac{HRV}, $\chi^2 (3) = 7{,}4; p < 0{,}05$. In der Post-hoc-Analyse bestätigten Wilcoxon-Vorzeichen-Rang-Tests signifikante Unterschiede für alle drei Faktoren der \ac{FKS} zwischen den Messzeitpunkten 15‘ und 30‘, den Messzeitpunkten 15‘ und 45‘ und den Messzeitpunkten 30‘ und 45‘. 
+
+% subsubsection beobachtungen (end)
+\subsubsection{Korrelationsanalyse} 
+
+% (fold)
+\label{subs:korrelationsanalyse_5_2}
+
+Ich vernachlässigte die Bedingung der Unabhängigkeit der Stichproben und führte eine bivariate Korrelationsanalyse durch, um lineare Zusammenhänge zwischen den einzelnen Merkmalen zu untersuchen. Die Korrelationmatrix (Tabelle~\ref{tab:korrelationen_2}) zeigt die signifikante Zusammenhänge zwischen Generalfaktor und seiner beiden Dimension \emph{glatter Verlauf} und \emph{Absorbiertheit}. Zusätzlich korrelieren beide Dimension positiv. Zwischen dem mittlerer normalisierter Shannon Entropie Index der Phasensynchronisation und den expliziten Flow-Merkmalen konnte ich keinen Zusammenhang feststellen. Nur zwischen der mittleren Doppelschrittfrequenz und der mittleren \ac{HR} gibt es noch einen signifikaten positiven Zusammenhang. Ich führte zudem Regressionsanalysen durch, um quadratische Zusammenhänge zu finden. Ich fand aber keine Zusammenhänge, die nicht schon durch ein lineares Modell in der Korrelationsanalyse erklärt wurden. 
+\begin{sidewaystable}
+	\centering \caption[Korrelationsmatrix (Machbarkeitsstudie: Gehen)]{Korrelationsmatrix der Machbarkeitsstudie zum Flow-Erleben beim Gehen: Arithmetisches Mittel, Standardabweichung und Korrelationen [$N = 23$]\\
+	\hspace{ 
+	\textwidth}* Korrelation ist auf dem Niveau von 0,05 (zweiseitig) signifikant \\
+	\hspace{ 
+	\textwidth}** Korrelation ist auf dem Niveau von 0,01 (zweiseitig) signifikant} \label{tab:korrelationen_2} 
+	\begin{tabular}
+		{lxxxxxxx} \toprule & M & SD & 1 & 2 & 3 & 4 & 5 \\
+		\midrule 1. Generalfaktor & 5,24 & 1,37 & & & & & \\
+		2. Glatter Verlauf & 5,36 & 1,31 & 1,00^{**} & & & & \\
+		3. Absorbiertheit & 5,08 & 1,49 & 0,99^{**} & 0,98^{**} & & & \\
+		4. Herzfrequenz ($1/min$) & 110,02 & 3,66 & -0,17 & -0,15 & -0,18 & & \\
+		5. Norm. Shan. Entr. Index & 0,22 & 0,09 & 0,23 & 0,27 & 0,18 & 0,08 & \\
+		6. Doppelschrittfr. ($1/min$) & 55,08 & 1,33 & -0,17 & -0,15 & -0,19 & 0,69^{**} & 0,16 \\
+		\bottomrule 
+	\end{tabular}
+\end{sidewaystable}
+
+% subsubsection korrelationsanalyse (end)
+% subsection ergebnis (end)
 % section flow_und_gehen_intraindividuell (end)
