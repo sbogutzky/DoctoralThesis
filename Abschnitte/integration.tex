@@ -1,36 +1,36 @@
+
+
 %!TEX root = /Users/sbogutzky/Entwicklung/projects/bogutzky/repositories/2939413/final-draft.tex
-\chapter{Integration in eine assistierende Echtzeit-Benutzerschnittstelle}
-\label{cha:integration_in_eine_assistierende_echtzeit_benutzerschnittstelle}
+\chapter{Integration in eine assistierende Echtzeit-Benutzerschnittstelle} \label{cha:integration_in_eine_assistierende_echtzeit_benutzerschnittstelle}
 
 Mit der Zielsetzung des \acs{BMBF}-Projekts \emph{Flow-Maschinen: Körperbewegung und Klang} Menschen im Alltag bei ihren gesundheitsförderlichen Absichten aktiv zu unterstützen, entwickelten wir im Projekt einen ersten Demonstrator einer Flow-Maschine. In diesem Ergebnis des \acs{BMBF}-Projekts wirkten unsere drei relativ eigenständige Teilvorhaben (Abschnitt~\ref{sec:kontext_der_arbeit}) zusammen. Speziell bei der Realisierung des Demonstrators entwickelte Nassrin Hajinejad komplexe Mechaniken der Verklanglichung basierend auf Eigenschaften beim Gehen \citep{Hajinejad2013, Hajinejad2015}. Der Demonstrator diente ihr als Untersuchungsintrument ihres Gestaltungsansatzes.
 
-\section{Closed-Loop-Ansatz} % (fold)
+\section{Closed-Loop-Ansatz} 
+
+% (fold)
 \label{sec:closed_loop_ansatz}
 
 Als Grundlage ihrer Eigenschaften beim Gehen diente eine von mir realisierte Gangmerkmalerkennung für das Smartphone. Die Gangmerkmalerkennung wurde von mir für die iPhone-Generationen ab dem iPhone 4S (besitzen ein Kreiselinstrument) entwickelt und getestet. Der Benutzer trägt das iPhone in der Hosentasche. Mittels der im iPhone integrierten Sensoren (Beschleunigungssensor, Drehratensensor) reagiert ein Algorithmus zur Echtzeitverarbeitung von Bewegungsdaten auf die biomechanischen Merkmale des Gehens, \emph{Mittelstütz} und \emph{mittelerer Schwung} (siehe Abschnitt~\ref{sec:gehen_und_laufen}). Ich entwickelte den Algorithmus auf Basis der Daten, die ich durch die Machbarkeitsstudie für die gehende Untersuchungsperson von der zweiten Shimmer \ac{IMU} mit Gyro-Modul erhielt. Der Algorithmus basiert auf dem R-Programm zur Erkennung von \ac{MS} aus Abschnitt~\ref{par:r_programme_zur_erkennung}. Der Algorithmus berechnet die personenindividuellen Grenzfrequenzen automatisch nach etwa fünf Schritten zu Beginn einer Sitzung und nach dem Stehenbleiben des Benutzers.
 
 Zusätzlich realisierte ich für den Demonstrator eine Anbindung zum Bioharness 3, um bei unseren Projektstudien \citep{Grueter2016a} kardiovaskuläre Messungen in Form von RR-Intervallen zu erhalten.
 
-Damit stellt der Demonstrator erste Anknüpfungspunkte für die Flow-Messung auf Basis der kardio-lokomotorischen Phasensynchronisation beim Gehen dar, die mit Hilfe der Gangmerkmalerkennung und den RR-Intervallen durch das ereignis-bezogenes Vorgehen (Abbildung~\ref{fig:grundlage_klps}) realisiert werden könnte. Damit wäre eine zeitnahe Identifikation der drei Muster der kardio-lokomotorischen Phasensynchronisation beim Gehen realisierbar und ermöglicht mit den in Abschnitt~\ref{sub:diskussion_5_3} beschriebenen Ausnahmen eine \emph{physiologisch messbare AFP}. Wobei die Ausnahmen durch weitere Programmlogik identifiziert und heraus gefiltert werden könnten. 
+Damit stellt der Demonstrator erste Anknüpfungspunkte für eine Flow-Messung auf Basis der kardio-lokomotorischen Phasensynchronisation beim Gehen dar, die mit Hilfe der Gangmerkmalerkennung und den RR-Intervallen durch das ereignis-bezogenes Vorgehen (Abbildung~\ref{fig:grundlage_klps}) realisiert werden könnte. Damit wäre eine zeitnahe Identifikation der drei Muster der kardio-lokomotorischen Phasensynchronisation beim Gehen realisierbar und ermöglicht mit den in Abschnitt~\ref{sub:diskussion_5_3} beschriebenen Ausnahmen eine \emph{physiologisch messbare AFP}. Wobei die Ausnahmen durch weitere Programmlogik identifiziert und heraus gefiltert werden könnten. 
 
-In einen Closed-Loop-Ansatz \citep[][S.~474]{Calvo2015} (Abbildung~\ref{fig:closed_loop_ansatz}) der Abstrakt dem prozessorientierten Flow-Modell (Abbildung~\ref{fig:prozessorientiertes_flow_modell_2}) gleicht, wäre es vorstellbar auf die drei Zustände der \emph{physiologisch messbare AFP} zu mit \emph{Realtime Biofeedback} (Abschnitt~\ref{sec:mensch_computer_interaktion_und_sport}) zu reagieren. 
-
-\begin{figure}[!htb]
-	\centering
-		\includegraphics[width=1.00\textwidth]{closed_loop_ansatz}
-	\caption[Closed-Loop Ansatz]{Closed-Loop Ansatz}
-	\label{fig:closed_loop_ansatz}
+In einem Closed-Loop-Ansatz \citep[][S.~474]{Calvo2015} (Abbildung~\ref{fig:closed_loop_ansatz}) der Abstrakt dem prozessorientierten Flow-Modell (Abbildung~\ref{fig:prozessorientiertes_flow_modell_2}) gleicht, wäre es vorstellbar auf die drei Zustände der \emph{physiologisch messbare AFP} zu mit \emph{Realtime Biofeedback} (Abschnitt~\ref{sec:mobile_mensch_computer_interaktion_und_sport}) zu reagieren. 
+\begin{figure}
+	[!htb] \centering 
+	\includegraphics[width=1.00 
+	\textwidth]{closed_loop_ansatz} \caption[Closed-Loop Ansatz]{Closed-Loop Ansatz} \label{fig:closed_loop_ansatz} 
 \end{figure}
 
-Beispielhaft hatten z.~B. Barbara Grüter und Corinna Peifer die Idee den Herzschlag zur Verklanglichung nutzen, um ihn als impliziten Taktgeber für die Schrittfrequenz beim Gehen zu verwenden. Benutzer würden ggf. ihre Schrittfrequenz angleichen und einen Zustand der \emph{Gleichgewichts} herstellen. Sollte dies zu mehr kardio-lokomorischer Synchronisation führen, welche zumindestens beim Laufen die Wahrscheinlichkeit Flow zu erleben erhöht, könnte wir diese Rückmeldung immer einsetzen, wenn das \emph{Realtime Biofeedback} System die Zustände {Schritt dominiert} oder {Herz dominiert} identifiziert, um Flow-Erleben zu unterstützen. Im Zustand \emph{Gleichgewicht} wäre diese Unterstützung nicht notwendig und könnte vom System abgeschaltet werden. 
+Beispielhaft hatten z.~B. Barbara Grüter und Corinna Peifer die Idee den Herzschlag zur Verklanglichung nutzen, um ihn als impliziten Taktgeber für die Schrittfrequenz beim Gehen zu verwenden. Benutzer würden ggf. ihre Schrittfrequenz angleichen und einen Zustand der \emph{Gleichgewichts} herstellen. Sollte dies zu mehr kardio-lokomorischer Synchronisation führen, welche zumindestens beim Laufen die Wahrscheinlichkeit erhöht Flow zu erleben, könnte wir diese Rückmeldung immer einsetzen, wenn das \emph{Realtime Biofeedback} System die Zustände {Schritt dominiert} oder {Herz dominiert} identifiziert, um Flow-Erleben zu unterstützen. Im Zustand \emph{Gleichgewicht} wäre diese Unterstützung nicht notwendig und könnte vom System abgeschaltet werden. 
 
 % section closed_loop_ansatz (end)
+\section{Zussemfassung} 
 
-\section{Zussemfassung} % (fold)
+% (fold)
 \label{sec:zussemfassung}
 
 In diesem Kapitel zeige ich wie der Demonstrator des \acs{BMBF}-Projekts als Anknüpfungspunkt für ein Closed-Loop-Ansatz in Form eines \emph{Realtime Biofeedback} Systems zur Messung einer \emph{physiologisch messbaren AFP} beim Gehen dienen kann. Heute erschwinglichen Smartphones mit Kreiselinstrument und Bluetooth LE sind dazu praktikabel. Eine Erweiterung des Demonstrator durch eine zeitnahe implizite Messung der kardio-lokomotorischen Phasensynchronisation ermöglicht die \emph{physiologisch messbaren AFP} und die zustandsbezogene Rückmeldung des Systems.
 
 % section zussemfassung (end)
-
-% Durch den Demonstrator ergeben erstmal nur Ankünpfpunkte für das Gehen, da die Gangmerkmalerkennung 
