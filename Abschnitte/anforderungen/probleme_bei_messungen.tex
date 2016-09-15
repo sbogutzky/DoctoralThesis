@@ -1,11 +1,16 @@
-%!TEX root = /Users/sbogutzky/Entwicklung/projects/bogutzky/repositories/2939413/final-draft.tex
 
-\section{Probleme bei Messungen von physiologischen Eigenschaften unter physischer Belastung} % (fold)
+
+%!TEX root = /Users/sbogutzky/Entwicklung/projects/bogutzky/repositories/2939413/final-draft.tex
+\section{Probleme bei Messungen von physiologischen Eigenschaften unter physischer Belastung} 
+
+% (fold)
 \label{sec:probleme_bei_messungen}
 
 Die Eignung eines Kandidaten zur impliziten Flow-Messung beim Gehen und Laufen hängt von unterschiedlichen Faktoren ab. Im Nachfolgenden diskutiere ich die Faktoren Störungsanfälligkeit, Methodeneinsatz und Zuordnung. Mit Zuordnung ist die Zuordnung der Ergebnisse einer Messmethode zum Flow-Phänomen und zu einer konkreten Reaktion des menschlichen Körpers gemeint. Die drei genannten Faktoren zielen darauf ab, eine implizite Messung zu ermöglichen, die später eine Echtzeitverarbeitung und -rückmeldung beim Gehen und Laufen erlaubt.
 
-\subsection{Störungsanfälligkeit} % (fold)
+\subsection{Störungsanfälligkeit} 
+
+% (fold)
 \label{sub:storungsanfalligkeit}
 
 Die Störungsanfälligkeit durch z.~B. elektromagnetische Felder in einem natürlichen Umfeld behindert die derzeitige Messung der Gehirnaktivität über ein \ac{EEG} \citep[][S.~56]{Henk2014}. Dementsprechend beschränkt sich die Studie von \citet{Hugentobler2011} zum Flow-Erleben mit einem Mehrkanalsystem, auf eine künstliche Umgebung innerhalb eines Computerspiels unter Laborbedingungen in einem faradayschen Käfig. Bis qualitativ hochwertige \acp{EEG}, die Messung der Gehirnaktivität im Freien ermöglichen, sind wir nur in der Lage theoretisch begründete Annahmen anzustellen und (über Umwege) zu überprüfen \citep[][S.~56]{Henk2014}. Das gleiche gilt für die von \citet{Harmat2015} verwendete funktionelle Nahinfrarotspektroskopie.
@@ -15,8 +20,9 @@ Bei der \ac{EDA} bereitet das thermoregulatorische Schwitzen unter Dauerbelastun
 Bei Aufnahmen von Signalen, wie z.~B. beim \ac{EKG} gerade unter sehr hohen Belastungsintensitäten ist das Signal-Rausch-Verhältnis zu beachten. Das Signal-Rausch-Verhältnis ist ein Maß für die technische Qualität eines Signals. Ist eine zu geringe Abtastrate z.~B. beim \ac{EKG} gewählt, kann dies zu einem niedrigen Signal-Rausch-Verhältnis führen. Es resultieren Messfehler, die z.~B. die \ac{EKG}-Messung für eine Analyse der \ac{HRV} unbrauchbar macht \citep{Hoos2010}.
 
 % subsection storungsanfalligkeit (end)
+\subsection{Methodeneinsatz} 
 
-\subsection{Methodeneinsatz} % (fold)
+% (fold)
 \label{sub:methodeneinsatz}
 
 Ein Grundproblem der frequenzbezogenen \ac{HRV}-Analyse unter physischer Belastung ist die Nichtstationarität der Zeitreihe der aufeinanderfolgenden RR-Intervalle \citep{Hottenrott2006}. Für eine frequenzbezogene \ac{HRV}-Analyse sind zwei mathematische Voraussetzungen zu erfüllen: gleiche zeitliche Messabstände (Äquidistanz) und ein (quasi-)stationärer Signalcharakter der RR-Intervalle \citep{Hoos2006}. (Quasi-)Stationarität bedeutet im dargestellten Zusammenhang, dass zumindest innerhalb des zu analysierenden Zeitintervalls die wesentlichen Verteilungsgrößen des Signals (Mittelwert und Varianz) zeitunabhängig sind \citep{Hoos2006}.
@@ -24,8 +30,9 @@ Ein Grundproblem der frequenzbezogenen \ac{HRV}-Analyse unter physischer Belastu
 Aus dem Grund der in der Regel nicht gegebenen Stationarität der Zeitreihe der RR-Intervalle unter physischer Belastung empfehlen \citet[S.~113]{Sarmiento2013} traditionelle Methoden der frequenzbezogenen Analyse wie \acs{FFT} und autoregressives (AR-)Modell nicht zu verwenden. Alternative Methoden der frequenzbezogenen Analyse, die das Problem der Nichtstationarität teilweise lösen, sind z.~B. die Kurzzeitfourier-Analyse (STFT) oder die kontinuierliche Wavelet Transformation (CWT) \citep[][S.~61f.]{Hoos2010}. Die beiden genannten Methoden arbeiten mit einer Fensterfunktion und ermöglichen zusätzlich zur Bestimmung von Frequenzanteilen eine zeitliche Verortung. 
 
 % subsection methodeneinsatz (end)
+\subsection{Zuordnung} 
 
-\subsection{Zuordnung} % (fold)
+% (fold)
 \label{sub:zuordnung}
 
 Die Zuordnung der Frequenzbereiche \acs{LF} und \acs{HF} unter physischer Belastung ist problematisch, da sich ein mechanisch bedingtes Resonanz- und Kopplungsphänomen durch die Atmung und der motorischen Aktivität im erweiterten \acs{HF}-Frequenzbereich manifestiert \citep[][S.~62]{Hoos2010}. Demzufolge ist eine Zugehörigkeitsbestimmung der \acs{HF} zur parasympathischen Aktivität des \acs{VNS}, wie bei ruhenden bzw. sitzenden Tätigkeiten, fehlerhaft. Die drastische Reduktion der \ac{HRV} erschwert zusätzlich die Zuordnung von zeit-, frequenzbezogenen und nichtlinearen \ac{HRV}-Parametern.
@@ -33,5 +40,4 @@ Die Zuordnung der Frequenzbereiche \acs{LF} und \acs{HF} unter physischer Belast
 Im Bezug auf \ac{EMG}-Messung im Gesicht zeigen die Ergebnisse der Studien aus Abschnitt~\ref{ssub:elektromyographie} das weitere Forschung nötig ist, um zu klären, inwiefern die \ac{EMG}-Messungen eine trennscharfe Zuordnung von Muskelpartien zu Flow gewährleistet \citep{Peifer2012}.
 
 % subsection zuordnung (end)
-
 % section probleme_bei_messungen_von_physiologischen_eigenschaften_unter_physischer_belastung (end)

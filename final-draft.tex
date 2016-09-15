@@ -23,12 +23,14 @@
 % \include{Bekanntgabe/bekanntgabe}
 % \include{Danksagung/danksagung}
 \include{Zusammenfassung/zusammenfassung}
+
 % *********************** Adding TOC and List of Figures ***********************
 %\cleardoublepage\ 
 \pagenumbering{Roman} 
 \pagestyle{plain}
 
-\tableofcontents \listoffigures \listoftables \include{kurzworte}
+\tableofcontents \listoffigures \listoftables 
+\include{kurzworte}
 
 % ******************************** Main Matter *********************************
 %\cleardoublepage\ 
@@ -46,10 +48,11 @@
 
 % ********************************** Back Matter *******************************
 % ********************************** Appendices ********************************
-\appendix
-\include{Anhang/studiendokumente}
-\include{Anhang/studienergebnisse}
+\appendix 
+\include{Anhang/studiendokumente} 
+\include{Anhang/studienergebnisse} 
 \include{Anhang/source_code}
+
 % ********************************** Bibliography ******************************
 \printbibliography\
 
