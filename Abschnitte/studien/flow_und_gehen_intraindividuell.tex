@@ -42,6 +42,9 @@ Ich rüstete sie vor jedem Lauf mit einem geladenen Smartphone, einem passenden 
 \label{sub:apparat_5_2}
 
 In der beschriebenen Machbarkeitsstudie kam die gleiche Version des \ac{PPC}s und der \ac{PPP} zum Einsatz wie in der vorangegangenen Laufstudie. Ich ergänzte das Equipment um eine zweite Shimmer \ac{IMU} mit Gyro-Modul, die ich oberhalb der Hosentasche der Untersuchungsperson fixierte (Abbildung~\ref{fig:equipment_2}). Die Aufnahme der Daten der zweiten Einheit diente zur Entwicklung einer Gangmerkmalerkennung, die für eine Smartphone App realisiert werden sollte und auf zusätzliche \acp{IMU} verzichten kann (Abschnitt~\ref{sec:closed_loop_ansatz}). Ich änderte die Sensorkonfiguration, da das Gehen eine geringe Abtastrate der Bewegung verlangt als das Laufen und weil eine zusätzliche Shimmer \ac{IMU} mit Gyro-Modul das Datenaufkommen zusätzlich erhöht. Für eine höchstmögliche Auflösung des \ac{EKG}s testete ich die Abtastraten 512~Hz sowie 1024~Hz. Das Shimmer \ac{EKG}-Modul ist in der Lage mit 1024~Hz abzutasten und die \ac{EKG}-Daten auf einen Flashspeicher zu sichern. Eine sofortige Bluetooth Übertragung ist aber nur bei 512~Hz gewährleistet. Die Konfiguration der beschriebenen Machbarkeitsstudie ist der Tabelle~\ref{tab:sensorkonfiguration_2} zu entnehmen. 
+
+Die Berechnung der kardio-lokomotorischen Phasensynchronisation wurde zuerst durch Licinio Roque und Rui Craveirinha in Microsoft Excel realisiert und von mir in das in Abschnitt~\ref{sub:apparat_5_1} beschriebene R-Programm übertragen. 
+
 \begin{table}
 	[!htb] \caption[Sensorkonfiguration (Machbarkeitsstudie: Gehen)]{Sensorkonfiguration der Machbarkeitsstudie zum Flow-Erleben beim Gehen} \label{tab:sensorkonfiguration_2} 
 	\begin{tabularx}
@@ -56,8 +59,6 @@ In der beschriebenen Machbarkeitsstudie kam die gleiche Version des \ac{PPC}s un
 		\bottomrule 
 	\end{tabularx}
 \end{table}
-
-Die Berechnung der kardio-lokomotorischen Phasensynchronisation wurde zuerst durch Licinio Roque und Rui Craveirinha in Microsoft Excel realisiert und von mir in das in Abschnitt~\ref{sub:apparat_5_1} beschriebene R-Programm übertragen. 
 
 % subsection apparat (end)
 \subsection{Operationalisierung und gewonnene Daten} 
