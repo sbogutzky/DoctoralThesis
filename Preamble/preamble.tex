@@ -1,6 +1,9 @@
 %!TEX root = /Users/sbogutzky/Entwicklung/projects/bogutzky/repositories/2939413/final-draft.tex
 % ****************************** Packages **********************************
 
+\usepackage[hyphens]{url} % Paket für Umbrüche in E-Mail-Adressen, URLs usw.
+\usepackage[a-1b]{pdfx}
+\usepackage{hyperref} % Das Hyperref Paket ist das Paket schlecht hin wenn es darum geht mit Hilfe von LATEX PDF Dokumente zu erstellen. Da es dem Benutzer nicht nur die Möglichkeit gibt Links und Verweise innerhalb von PDF Dokumenten zu erzeugen und zu setzen, sondern auch die Änderung von Einstellungen innerhalb des PDF Dokumentes zulässt.
 \usepackage[utf8]{inputenc} % Um die Umlaute direkt tippen zu können, kann das Paket inputenc verwendet werden.
 \usepackage[T1]{fontenc} % Zusammen mit dem inputenc Paket sollte das fontenc Paket verwendet werden. Dadurch lassen sich Probleme beim Trennen von Wörter, die Umlaute enthalten, vermeiden beziehungsweise sie können dann erst überhaupt getrennt werden.
 \usepackage{lmodern} % Das lmodern (= Latin Modern) Paket verändert die verwendete Schriftart. Der Hauptunterschied ist die Darstellung der Schrift innerhalb von pdf Dateien, während diese bei der Verwendung der normalen Standard Schriftart von Latex - Computer Modern - doch recht pixelige auf den Betrachter wirkt, erscheint der Text der mit Latin Modern als Schriftart geschrieben worden ist doch um einiges flüßiger.
@@ -10,8 +13,8 @@
 \usepackage[mla]{ellipsis} % ellipsis sind Auslassungspunkte. Die Option mla ist für die eckigen Klammern zuständig
 \usepackage[onehalfspacing]{setspace} % Das Setspace Paket ermöglicht es auch recht einfach Weise den Zeilenabstand zu ändern.
 \usepackage[dvipsnames, table, xcdraw]{xcolor} % Unterstützung von Farbmodellen
-\usepackage[hyphens]{url} % Paket für Umbrüche in E-Mail-Adressen, URLs usw.
-\usepackage[pdfauthor={Simon Bogutzky}, pdftitle={Objektivierung und Messung von Flow-Erleben beim Gehen und Laufen für mobile Applikationen}, colorlinks=false, citecolor=FlowCyan, urlcolor=FlowCyan, linkcolor=FlowCyan, linktoc=page, pdfpagelabels]{hyperref} % Das Hyperref Paket ist das Paket schlecht hin wenn es darum geht mit Hilfe von LATEX PDF Dokumente zu erstellen. Da es dem Benutzer nicht nur die Möglichkeit gibt Links und Verweise innerhalb von PDF Dokumenten zu erzeugen und zu setzen, sondern auch die Änderung von Einstellungen innerhalb des PDF Dokumentes zulässt.
+
+
 \usepackage[backend=bibtex, pagetracker=true, bibencoding=utf8, natbib=true, style=authoryear-comp, backref=false, url=true, maxnames=3, minnames=1, uniquelist=true, isbn=false, doi=false]{biblatex} % Paket bietet erweiterte bibliographischen Einrichtungen für die Verwendung mit LaTeX in Verbindung mit BibTeX
 \usepackage{tikz} % Erlaubt Grafiken programmatisch zu erstellen
 \usepackage{graphicx} % Ist Schlüssel-Wert-Schnittstelle für optionale Argumente für den "includegraphics" Befehl
